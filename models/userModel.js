@@ -17,17 +17,17 @@ class User {
         return new Promise((resolve, reject) => {
                     
             const users = [
-            { _id: 'userId1',  email: 'ryang123@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'grant', donations: [] },
-            { _id: 'userId2',  email: 'johndoe456@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'john', lastName: 'doe', donations: []},
-            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: []  },
-            { _id: 'userId4',  email: 'mike34@hotmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'mike', lastName: 'johnson', donations: []  },
-            { _id: 'userId5',  email: 'amy.white@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'amy', lastName: 'white', donations: []  },
-            { _id: 'userId6',  email: 'david.miller@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'david', lastName: 'miller', donations: []  },
-            { _id: 'userId7',  email: 'emily.roberts@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'emily', lastName: 'roberts', donations: []  },
-            { _id: 'userId8', email: 'alex.parker@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'alex', lastName: 'parker', donations: []  },
-            { _id: 'userId9',  email: 'lisa.king@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'lisa', lastName: 'king', donations: []  },
-            { _id: 'userId10',  email: 'ryan.jones@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'jones', donations: []  },
-            { _id: 'userId11',  email: 'carol.martin@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'carol', lastName: 'martin', donations: []  }
+            { _id: 'userId1',  email: 'ryang123@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'grant', donations: [], role: "admin" },
+            { _id: 'userId2',  email: 'johndoe456@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'john', lastName: 'doe', donations: [], role: "manager"},
+            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: [] , role: "member" },
+            { _id: 'userId4',  email: 'mike34@hotmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'mike', lastName: 'johnson', donations: [], role: "member"  },
+            { _id: 'userId5',  email: 'amy.white@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'amy', lastName: 'white', donations: [], role: "member"  },
+            { _id: 'userId6',  email: 'david.miller@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'david', lastName: 'miller', donations: [], role: "member"  },
+            { _id: 'userId7',  email: 'emily.roberts@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'emily', lastName: 'roberts', donations: [], role: "member"  },
+            { _id: 'userId8', email: 'alex.parker@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'alex', lastName: 'parker', donations: [], role: "member"  },
+            { _id: 'userId9',  email: 'lisa.king@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'lisa', lastName: 'king', donations: [], role: "member"  },
+            { _id: 'userId10',  email: 'ryan.jones@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'jones', donations: [], role: "member"  },
+            { _id: 'userId11',  email: 'carol.martin@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'carol', lastName: 'martin', donations: [], role: "member"  }
             ];
     
             // Array to store promises for each seeding operation
@@ -101,14 +101,24 @@ class User {
                 reject(err);//reject promise
             } else {
                 resolve(users);//resolve promise
-                console.log('function all() returns: ', users);
+                console.log('function getAllUsers() returns: ', users);
             }
             
             })
         })
     }
 
-    //returns users in the DB with matching username
+    // Define findById method
+    findById(userId, cb) {
+        this.dbManager.db.findOne({ _id: userId }, function(err, user) {
+            if (err) {
+                return cb(err, null);
+            }
+            cb(null, user);
+        });
+    };
+    
+    //returns users in the DB with matching email
     lookupEmail(email, cb) {
         this.dbManager.db.find({ 'email': email }, function (err, entries) {
             if (err) {
@@ -132,7 +142,7 @@ class User {
                     reject(err);
                 }
                 //hashing password
-                bcrypt.hash(password, saltRounds, (err, hash) => { //CHANGE THIS TO 'SALT' TO ADD SALT GEN
+                bcrypt.hash(password, saltRounds, (err, hash) => { //CHANGE THIS TO 'SALT' TO ADD SALT GEN - currently just passes in salt rounds
                     if (err) {
                         console.log('error hashing password');
                         reject(err);

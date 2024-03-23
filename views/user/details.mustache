@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <!-- User details card -->
+    <div class="card">
+        <div class="card-header">
+            User Details
+        </div>
+        <div class="card-body">
+            <p><strong>ID:</strong> {{user._id}}</p>
+            <p><strong>Email:</strong> {{user.email}}</p>
+            <p><strong>First Name:</strong> {{user.firstName}}</p>
+            <p><strong>Last Name:</strong> {{user.lastName}}</p>
+            <p><strong>Role:</strong> {{user.role}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <!-- Donations card -->
+    <div class="card">
+        <div class="card-header">
+            Donations
+        </div>
+        <div class="card-body">
+            <!-- Check if there are donations -->
+            {{#donations}}
+                <!-- Iterate over donations and display each -->
+                {{#.}}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/donation/details/{{_id}}">Donation ID: {{_id}}</a></h5>                                                  
+                            <p class="card-text"><strong>Category:</strong> {{category}}</p>
+                            <p class="card-text"><strong>Donated On:</strong> {{donatedOn}}</p>
+                        </div>
+                    </div>
+                {{/.}}
+            {{/donations}}
+            {{^donations}}
+                <p>No donations found.</p>
+            {{/donations}}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

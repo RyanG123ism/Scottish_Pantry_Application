@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container mt-4">
+    <!-- Donations card -->
+    <div class="card">
+        <div class="card-header">
+            Donation
+        </div>
+        <div class="card-body">
+            {{#donation}}
+                {{#.}}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/donation/details/{{_id}}">Donation ID: {{_id}}</a></h5>                                                  
+                            <p class="card-text"><strong>Food Item:</strong> {{foodItem}}</p>
+                            <p class="card-text"><strong>Category:</strong> {{category}}</p>
+                            <p class="card-text"><strong>Price:</strong> {{price}}</p>
+                            <p class="card-text"><strong>Weight (kg):</strong> {{weightKg}}</p>
+                            <p class="card-text"><strong>Quantity:</strong> {{qty}}</p>
+                            <p class="card-text"><strong>Donated On:</strong> {{donatedOn}}</p>
+                        </div>
+                    </div>
+                {{/.}}
+            {{/donation}}
+            {{^donation}}
+                <p>No donations found.</p>
+            {{/donation}}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

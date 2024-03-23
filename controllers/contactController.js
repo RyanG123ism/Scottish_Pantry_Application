@@ -34,7 +34,8 @@ exports.submit_contact_form = async (req, res) => {
         } else {
             console.log('Contact form submitted:' , newContact);
 
-            res.redirect('/');
+            //redirect back to home page
+            res.redirect('/home');
         }
     });
 };

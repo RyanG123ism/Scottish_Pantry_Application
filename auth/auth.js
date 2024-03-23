@@ -1,8 +1,6 @@
 //importing relevant libraries
 const bcrypt = require('bcrypt');
-const jwt = require("jsonwebtoken"); 
 const User = require('../models/userModel');
-const hardcodedSecret = "scottishPantryApp123456";
 
 exports.login = function (req, res,next) {
     let email = req.body.email;
@@ -19,11 +17,12 @@ exports.login = function (req, res,next) {
       //compare provided password with stored passwordHash
       bcrypt.compare(password, user.passwordHash, function (err, result) {
         if (result) {
-          //use the payload to store information about the user such as username.
-          let payload = { email: email };
-          //create the access token 
-          let accessToken = jwt.sign(payload, hardcodedSecret,{expiresIn: 300}); 
-          res.cookie("jwt", accessToken);
+          //storing the user information in the session
+          req.session.user = {
+            email: email,
+            id: user._id,
+            role: user.role//passing the role into the session
+          };
           next();
         } else {
           return res.render("user/login");
@@ -33,16 +32,19 @@ exports.login = function (req, res,next) {
   }; 
 
   exports.verify = function (req, res, next) {
-    let accessToken = req.cookies.jwt;
-    if (!accessToken) {
-      return res.status(403).send();
-    }
-    let payload;
-    try {
-      payload = jwt.verify(accessToken, hardcodedSecret);
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      return res.status(403).send(); 
+    } else {
+
+      //accessing session details
+      const userId = req.session.user.id;
+      const role = req.session.user.role;
+
+      //passing session details through middleware
+      req.sessionDetails = {userId, role};
+
       next();
-    } catch (e) {
-      //if an error occured return request unauthorized error
-      res.status(401).send();
     }
   };
+

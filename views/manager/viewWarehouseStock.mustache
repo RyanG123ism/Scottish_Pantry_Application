@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <div class="card mb-3 bg-light">
+        <div class="card-body">
+            <h2 class="card-title">Warehouse Stock</h2>
+            <div class="card-text">
+                {{#stockList}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Food Item: {{foodItem}}</h5>
+                        <p class="card-text">Total Weight: {{totalWeight}}</p>
+                        <p class="card-text">Total Quantity: {{totalQty}}</p>
+                        <p class="card-text">Category: {{category}}</p>
+                    </div>
+                </div>
+                {{/stockList}}
+                {{^stockList}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">No stock available.</p>
+                    </div>
+                </div>
+                {{/stockList}}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

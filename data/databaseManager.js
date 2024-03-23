@@ -1,10 +1,5 @@
 //importing relevant libraries
 const nedb = require('nedb');
-const User = require('../models/userModel');
-const Donation = require('../models/donationModel');
-const Warehouse = require('../models/warehouseModel');
-
-
 
 //class for configuring the database
 class DatabaseManager {
@@ -22,7 +17,7 @@ class DatabaseManager {
         
     }
 
-    //multiple seeding objects
+    //multiple seeding objects - not using due to circular dependencies error
     async seedDatabase() {
         console.log('seeding database....');
         

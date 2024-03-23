@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <div class="row">
+        {{#users}}
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{firstName}} {{lastName}}</h5>
+                    <p class="card-text"><strong>Email:</strong> <a href="/admin/user_details/{{_id}}">{{email}}</a></p>
+                    <p class="card-text"><strong>ID:</strong> {{_id}}</p>
+                    <p class="card-text"><strong>Role:</strong> {{role}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/user/{{_id}}/edit" class="btn btn-primary">Edit</a>
+                    <a href="/user/{{_id}}/deactivate" class="btn btn-danger">Deactivate</a>
+                </div>
+            </div>
+        </div>
+        {{/users}}
+    </div>
+</div>
+
+{{^users}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>No users to display</p>
+        </div>
+    </div>
+</div>
+{{/users}}
+
+</body>
+</html>
