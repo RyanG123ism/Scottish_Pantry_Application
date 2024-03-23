@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+    <div class="container">
+    <div class="card mb-3">
+        <div class="card-body text-center">
+            <h2 class="card-title">Account Functions</h2>
+            <div class="card-text">
+            {{^user}}
+                <a id="logout" href="/user/logout" class="btn btn-primary">Logout</a>
+                <a id="logout" href="/user/my_account" class="btn btn-primary"> My Account </a>   
+            {{/user}}  
+            {{#user}} 
+                <a id="login" href="/user/register" class="btn btn-primary">Register</a>
+                <a id="login" href="/user/login" class="btn btn-primary">Login</a>
+            {{/user}}              
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <br/>
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">More about us:</h2>
+                <div class="card-text">
+                    <a href="/about" class="btn btn-primary">About Us</a>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">Have a Question?</h2>
+                <div class="card-text">
+                    <a href="/contact" class="btn btn-primary">Contact Us</a>                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{^user}}
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">Authourised User Functionality</h2>
+                <div class="card-text">
+                    <a href="/make_donation" class="btn btn-primary">Make a Donation</a>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/user}}
+
+
+</body>
+</html>

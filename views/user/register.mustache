@@ -1,0 +1,33 @@
+<html>
+   <head>
+      {{>header}}
+   </head>
+   <body class="container">
+
+   {{>bodyHeading}}
+
+   <h1>{{title}}</h1>
+   <h2>New User Registration</h2>
+   <form method="post" action="/user/register">
+      <div class="form-group">
+         {{email-error}}
+         <label for="email">Email</label>
+         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+         <label for="firstName">First Name</label>
+         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" required>
+      </div>
+      <div class="form-group">
+         <label for="lastName">Last Name</label>
+         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name" required>
+      </div>
+      <div class="form-group">
+         <label for="password">Password (8 characters minimum)</label>
+         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" minlength="8" required>
+      </div>
+      <div class="form-group">
+         <input type="submit" value="Register" class="btn btn-primary">
+      </div>
+   </form>
+</body>

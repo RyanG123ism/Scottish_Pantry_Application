@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+    {{>bodyHeading}}
+
+    <h1>{{ title }}</h1>
+
+    {{#contactForms}}
+    <div class="card">
+        <h2>{{ name }}</h2>
+        <p>Email: {{ email }}</p>
+        <p>Phone: {{ phone }}</p>
+        <p>Contact Request: {{ question }}</p>
+    </div>
+     
+        <form action="/contact/delete_contact_form" method="POST">
+            <!-- Hidden input field to hold the ID -->
+            <input type="hidden" name="_id" value="{{ _id }}">
+            <button type="submit">Delete</button>
+        </form>
+
+    {{/contactForms}}
+    {{^contactForms}}
+        No contact Forms have been submitted
+    {{/contactForms}}
+</body>
+</html>
