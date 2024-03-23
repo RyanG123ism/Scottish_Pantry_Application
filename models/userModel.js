@@ -19,7 +19,7 @@ class User {
             const users = [
             { _id: 'userId1',  email: 'ryang123@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'grant', donations: [], role: "admin" },
             { _id: 'userId2',  email: 'johndoe456@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'john', lastName: 'doe', donations: [], role: "manager"},
-            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: [] , role: "member" },
+            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: [] , role: "manager" },
             { _id: 'userId4',  email: 'mike34@hotmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'mike', lastName: 'johnson', donations: [], role: "member"  },
             { _id: 'userId5',  email: 'amy.white@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'amy', lastName: 'white', donations: [], role: "member"  },
             { _id: 'userId6',  email: 'david.miller@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'david', lastName: 'miller', donations: [], role: "member"  },

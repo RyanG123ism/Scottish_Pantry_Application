@@ -35,8 +35,15 @@ exports.stock_dashboard = async(req, res) => {
 }
 
 //returns all donations in the DB
-exports.donation_dashboard = async(req, res) => {
-    
+exports.donations_dashboard = async(req, res) => {
+    try {
+        const warehouses = await Warehouse.getAllWarehouses();
+        console.log("warehouse list returns: ", warehouses)
+        res.render('admin/donationsDashboard', { warehouses: warehouses} )
+    } catch (error) {
+        console.error('Error processing GET request:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 }
 
 //returns a specific users details

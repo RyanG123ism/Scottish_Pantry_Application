@@ -15,8 +15,8 @@ class Warehouse {
     async seedData() {
         return new Promise((resolve, reject) => {
             const warehouses = [
-                { _id: 'warehouseId1', location: 'Glasgow', address: '69-71 Aberdalgie Rd, Easterhouse', postcode: 'G34 9HJ', staffMembers:[], donations: ['donationId1', 'donationId2']},
-                { _id: 'warehouseId2', location: 'Edinburgh', address: '42 John St, Penicuik', postcode: 'EH26 8AB', staffMembers:[], donations: ['donationId3', 'donationId4']}
+                { _id: 'warehouseId1', location: 'Glasgow', address: '69-71 Aberdalgie Rd, Easterhouse', postcode: 'G34 9HJ', staffMembers:['userId2'], donations: ['donationId1', 'donationId2']},
+                { _id: 'warehouseId2', location: 'Edinburgh', address: '42 John St, Penicuik', postcode: 'EH26 8AB', staffMembers:['userId3'], donations: ['donationId3', 'donationId4']}
             ]
     
             // Array to store promises for each seeding operation

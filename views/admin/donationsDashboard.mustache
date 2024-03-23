@@ -10,15 +10,15 @@
 <div class="container">
     <div class="card mb-3">
         <div class="card-body text-center">
-            <h2 class="card-title">Choose which warehouse to view stock from</h2>
+            <h2 class="card-title">Choose which warehouse to view donations from</h2>
             <div class="card-text">
                 {{#warehouses}}
-                    <a href="/warehouse/view_stock/{{_id}}" class="btn btn-primary">{{address}}</a>
+                    <a href="/warehouse/view_donations/{{_id}}" class="btn btn-primary">{{address}}</a>
                 {{/warehouses}}
                 {{^warehouses}}
                     <p>No warehouse to display </p>
                 {{/warehouses}}
-                <a href="/warehouse/view_all_stock" class="btn btn-primary">View All Stock</a>
+                <a href="/warehouse/view_all_warehouse_donations" class="btn btn-primary">View All Donations</a>
             </div>
         </div>
     </div>

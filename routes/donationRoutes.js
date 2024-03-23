@@ -6,6 +6,7 @@ const controller = require('../controllers/donationController.js');
 //GET ROUTES
 router.get('/details/:donationId', controller.details);
 
+
 //POST ROUTES
 
 

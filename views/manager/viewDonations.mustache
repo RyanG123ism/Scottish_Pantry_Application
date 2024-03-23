@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <div class="card mb-3 bg-light">
+        <div class="card-body">
+            <h2 class="card-title">Warehouse Donations</h2>
+            <div class="card-text">
+                {{#donations}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Food Item: {{foodItem}}</h5>
+                        <p class="card-text">Total Weight: {{weightKg}}</p>
+                        <p class="card-text">Total Quantity: {{qty}}</p>
+                        <p class="card-text">Category: {{category}}</p>
+                        <p class="card-text">Donated On: {{donatedOn}}</p>
+                        <p class="card-text">Donated By: {{userId}} </p>                        
+                    </div>
+                </div>
+                {{/donations}}
+                {{^donations}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">No Donations as of Now!</p>
+                    </div>
+                </div>
+                {{/donations}}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

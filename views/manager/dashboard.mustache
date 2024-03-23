@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body text-center">
+            <h2 class="card-title">Account Functions</h2>
+            <div class="card-text">
+                {{#warehouses}}
+                    <a id="users" href="/admin/user_dashboard" class="btn btn-primary">User Dashboard - IMPLEMENT</a>
+                    <a id="stock" href="/warehouse/view_stock/{{_id}}" class="btn btn-primary"> View Warehouse Stock</a>
+                    <a id="donations" href="/warehouse/view_donations/{{_id}}" class="btn btn-primary"> View Warehouse Donations</a>
+                {{/warehouses}}
+                {{^warehouses}}
+                    <p>Your account is not linked to any warehouses - contact an admin </p>
+                {{/warehouses}}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

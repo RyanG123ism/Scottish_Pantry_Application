@@ -7,7 +7,7 @@ const controller = require('../controllers/adminController.js');
 router.get("/dashboard", controller.dashboard);
 router.get("/user_dashboard", controller.user_dashboard);
 router.get("/stock_dashboard", controller.stock_dashboard);
-router.get("/donation_dashboard", controller.donation_dashboard);
+router.get("/donations_dashboard", controller.donations_dashboard);
 router.get('/user_details/:userId', controller.user_details);
 
 //POST ROUTES

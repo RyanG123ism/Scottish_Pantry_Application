@@ -76,6 +76,21 @@ getUsersDonations(userId, cb) {
     });
 };
 
+//a function to return all users from the database by using the email - only users have an email
+getAllDonations() {
+    return new Promise((resolve, reject) => {
+        this.dbManager.db.find({ foodItem: { $exists: true } }, function(err, donations) {
+            if (err) {
+                reject(err);//reject promise
+            } else {
+                resolve(donations);//resolve promise
+                console.log('function getAllDonations() returns: ', donations);
+            }
+            
+            })
+        })
+}
+
 //finds ONE donation based on ID
 getDonationById(donationId, cb) {
     this.dbManager.db.findOne({ _id: donationId }, (err, donation) => {
