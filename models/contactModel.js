@@ -14,17 +14,17 @@ class Contact {
 
 
 //adds a contact form into the DB 
-addContactForm(contactData, callback) {
-    // Insert the contact data into the database
+addContactForm(contactData) {
+    // Insert the stock request into the database
     return new Promise((resolve, reject) => {
         this.dbManager.db.insert(contactData, (err, newContact) => {
             if (err) {
-                // Handle errors
+                //handle errors
                 console.error('Error adding contact:', err);
-                callback(err);
+                reject(err);
             } else {
-                // No error, invoke the callback with the newly inserted contact
-                callback(null, newContact);
+                // No error, resolve the promise
+                resolve(newContact);
             }
             });
         })

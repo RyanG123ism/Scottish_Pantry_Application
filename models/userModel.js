@@ -80,7 +80,8 @@ class User {
         lastName,
         password,//need to take this out eventually
         passwordHash : await this.hashPassword(password), //using the password to store a hashed version
-        donations : [] //creating an empty array of donations for a user
+        donations : [], //creating an empty array of donations for a user
+        role : "member" // assigning member role to user
         };
 
         //insert user into DB

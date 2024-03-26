@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +9,47 @@
 {{>bodyHeading}}
 
 <div class="container">
-    <div class="card mb-3">
-        <div class="card-body text-center">
-            <h2 class="card-title">Account Functions</h2>
-            <div class="card-text">
-                    <a id="users" href="/admin/user_dashboard" class="btn btn-primary">User Dashboard</a>
-                    <a id="stock" href="/admin/stock_dashboard" class="btn btn-primary"> Stock Dashboard </a>
-                    <a id="donations" href="/admin/donations_dashboard" class="btn btn-primary"> Donation Dashboard</a>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h2 class="card-title">User Management</h2>
+                    <div class="card-text">
+                        <a id="users" href="/admin/user_dashboard" class="btn btn-primary">Manage Users</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Inventory Management</h2>
+                    <div class="card-text">
+                        <a id="stock" href="/admin/stock_dashboard" class="btn btn-primary">Manage Stock</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Donation Management</h2>
+                    <div class="card-text">
+                        <a id="donations" href="/admin/donations_dashboard" class="btn btn-primary">Manage Donations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Accepted Donation Items</h2>
+                    <div class="card-text">
+                        <a id="donations" href="/donation/accepted_donations_dashboard" class="btn btn-primary">Manage Items</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

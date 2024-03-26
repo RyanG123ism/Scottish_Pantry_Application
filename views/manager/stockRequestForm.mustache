@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scottish Pantry</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    {{>bodyHeading}}
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Create a New Stock Request Form</h2>
+                <h3>This form will be submitted to head office where it will be approved/declined by the operations manager, based on your stock levels, and other warehouses stock levels.</h3>
+                <form action="/warehouse/post_create_stock_request/{{warehouseId}}" method="post">
+                    <div class="form-group">
+                        <label for="foodItem">Food Item:</label>
+                        <select class="form-control" id="foodItem" name="foodItem" required>
+                            {{#stockList}}
+                                <option value="{{foodItem}}">{{foodItem}}</option>
+                            {{/stockList}}
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="notes">Notes (if any):</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="3" required></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

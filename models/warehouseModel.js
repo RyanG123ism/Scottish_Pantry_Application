@@ -15,8 +15,9 @@ class Warehouse {
     async seedData() {
         return new Promise((resolve, reject) => {
             const warehouses = [
-                { _id: 'warehouseId1', location: 'Glasgow', address: '69-71 Aberdalgie Rd, Easterhouse', postcode: 'G34 9HJ', staffMembers:['userId2'], donations: ['donationId1', 'donationId2']},
-                { _id: 'warehouseId2', location: 'Edinburgh', address: '42 John St, Penicuik', postcode: 'EH26 8AB', staffMembers:['userId3'], donations: ['donationId3', 'donationId4']}
+                //staffMembers[] will eventually be a list of staff attached to that warehouse - for now its just the manager
+                { _id: 'warehouseId1', managerId: 'userId2', location: 'Glasgow', address: '69-71 Aberdalgie Rd, Easterhouse', postcode: 'G34 9HJ', staffMembers:['userId2'], donations: ['donationId1', 'donationId2']},
+                { _id: 'warehouseId2', managerId: 'userId3', location: 'Edinburgh', address: '42 John St, Penicuik', postcode: 'EH26 8AB', staffMembers:['userId3'], donations: ['donationId3', 'donationId4']}
             ]
     
             // Array to store promises for each seeding operation
@@ -61,6 +62,24 @@ class Warehouse {
     }
 
 
+    //adds a contact form into the DB 
+    addStockRequest(stockRequestData, callback) {
+        // Insert the contact data into the database
+        return new Promise((resolve, reject) => {
+            this.dbManager.db.insert(stockRequestData, (err, newStockRequest) => {
+                if (err) {
+                    // Handle errors
+                    console.error('Error adding stock request:', err);
+                    reject(err);
+                } else {
+                    // No error, invoke the callback with the newly inserted contact
+                    resolve(newStockRequest);
+                }
+            });
+        })
+    
+    }
+
     //a function to return all users from the database by using the email - only users have an email
     getAllWarehouses() {
         return new Promise((resolve, reject) => {
@@ -76,9 +95,69 @@ class Warehouse {
             })
     }
 
+    findByManagerId(managerId) {
+        return new Promise((resolve, reject) => {
+            this.getAllWarehouses()
+                .then(warehouses => {
+                    //finding the managers warehouse
+                    const warehouse = warehouses.find(warehouse => warehouse.managerId === managerId);
+                    
+                    //resolving the promise with the warehouse or null
+                    resolve(warehouse || null);
+                })
+                .catch(error => {
+                    //return error
+                    reject(error);
+                });
+        });
+    }
+
+    //a function to return all users from the database by using the email - only users have an email
+    getAllStockRequests() {
+        return new Promise((resolve, reject) => {
+            this.dbManager.db.find({ notes: { $exists: true } }, function(err, stockRequests) {
+                if (err) {
+                    reject(err);//reject promise
+                } else {
+                    resolve(stockRequests);//resolve promise
+                    console.log('function getAllStockRequests() returns: ', stockRequests);
+                }
+                
+                })
+            })
+    }
+
+    //finds a specific stock request by ID
+    findStockRequestById(requestId) {
+        return new Promise((resolve, reject) => {
+            this.dbManager.db.findOne({ _id: requestId, notes: { $exists: true } }, function(err, stockRequest) {
+                if (err) {
+                    reject(err);//reject promise
+                } else {
+                    resolve(stockRequest);//resolve promise
+                    console.log('function getStockRequestById() returns: ', stockRequest);
+                }
+                
+                })
+            })
+    }
+
+    //updates an existing stock request status 
+    updateStockRequest(stockRequest) {
+        return new Promise((resolve, reject) => {
+            this.dbManager.db.update({ _id: stockRequest._id }, { $set: { status: stockRequest.status } }, {}, function(err, stockRequest) {
+                if (err) {
+                    reject(err);
+                } else {
+                    console.log(`Updated stock request:`, stockRequest);
+                    resolve(); //resolve promise
+                }
+            });
+        });
+    }
+
 }
 const warehouse = new Warehouse(dbManager);
-
 warehouse.seedData();
 
 module.exports = warehouse;

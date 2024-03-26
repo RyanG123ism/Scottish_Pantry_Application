@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h1 style="text-align: center;">Accepted Donations List</h1>
+    <h4>These Items are what Scottish Pantry currently accept as donation Items. If there is an overflow of stock or simply less need for a specific item. The 'Remove' button can be used to
+        halt any further donations of this item. More items can also be introduced to the accepted donations list by clicking the 'Add' button. 
+    </h4>
+    <br/>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/donation/add_donation_item" method="post">
+
+                    <div class="form-group">
+                        <label for="acceptedItem">Food Item:</label>
+                        <input type="text" class="form-control" id="acceptedItem" name="acceptedItem" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="acceptedItemCategory">Category</label>
+                        <select class="form-control" id="acceptedItemCategory" name="acceptedItemCategory" required>
+                            <option value="pantry items">Pantry Items</option>
+                            <option value="tinned goods">Tinned Goods</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="veg">Vegetables</option>
+                            <option value="dairy products">Dairy Products</option>
+                            <option value="meat">Meat</option>
+                            <option value="bread">Bread</option>
+                            <option value="pastry">Pastry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="max-width: 2000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Item Id</th>
+                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Food Item</th>
+                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Category</th>
+                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#acceptedDonations}}
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{_id}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{acceptedItem}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{acceptedItemCategory}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                        <!-- Approve Form -->
+                        <form action="/donation/remove_accepted_donation_item/{{_id}}" method="post" style="display: inline;">
+                            <button type="submit" style="text-decoration: none; color: red; border: none; background: none; cursor: pointer;">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {{/acceptedDonations}}
+                {{^acceptedDonations}}
+                    <p>no donation items to display</p>
+                {{/acceptedDonations}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

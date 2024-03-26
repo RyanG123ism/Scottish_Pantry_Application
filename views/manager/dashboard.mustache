@@ -10,16 +10,17 @@
 <div class="container">
     <div class="card mb-3">
         <div class="card-body text-center">
-            <h2 class="card-title">Account Functions</h2>
+            <h2 class="card-title">Manager Dashboard</h2>
             <div class="card-text">
-                {{#warehouses}}
+                {{#warehouseId}}
                     <a id="users" href="/admin/user_dashboard" class="btn btn-primary">User Dashboard - IMPLEMENT</a>
-                    <a id="stock" href="/warehouse/view_stock/{{_id}}" class="btn btn-primary"> View Warehouse Stock</a>
-                    <a id="donations" href="/warehouse/view_donations/{{_id}}" class="btn btn-primary"> View Warehouse Donations</a>
-                {{/warehouses}}
-                {{^warehouses}}
+                    <a id="stock" href="/warehouse/view_stock/{{warehouseId}}" class="btn btn-primary"> View Warehouse Stock</a>
+                    <a id="donations" href="/warehouse/view_donations/{{warehouseId}}" class="btn btn-primary"> View Warehouse Donations</a>
+                    <a id="donations" href="/warehouse/create_stock_request/{{warehouseId}}" class="btn btn-primary"> Request Stock</a>
+                {{/warehouseId}}
+                {{^warehouseId}}
                     <p>Your account is not linked to any warehouses - contact an admin </p>
-                {{/warehouses}}
+                {{/warehouseId}}
             </div>
         </div>
     </div>

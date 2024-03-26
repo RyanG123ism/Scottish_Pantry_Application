@@ -31,9 +31,10 @@ exports.login = function (req, res,next) {
     });
   }; 
 
-  exports.verify = function (req, res, next) {
+  exports.verify_logged_in = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
+      console.log('user session not found');
       return res.status(403).send(); 
     } else {
 
@@ -45,6 +46,145 @@ exports.login = function (req, res,next) {
       req.sessionDetails = {userId, role};
 
       next();
+    }
+  };
+
+  exports.verify_admin = function (req, res, next) {
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      console.log('user session not found');
+      return res.status(403).send(); 
+    } 
+    else 
+    {
+      //accessing session details
+      const role = req.session.user.role;
+      const userId = req.session.user.id;
+
+      if(role == "admin")
+      {
+        //verifying is complete - passing session details through middleware
+        req.sessionDetails = {userId, role};
+        next();
+      }
+      else
+      {
+        //return role insufficient 
+        console.log('role access insufficient');
+        return res.status(403).send(); 
+      }     
+    }
+  };
+
+  exports.verify_manager_or_higher = function (req, res, next) {
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      console.log('user session not found');
+      return res.status(403).send(); 
+    } 
+    else 
+    {
+      //accessing session details
+      const role = req.session.user.role;
+      const userId = req.session.user.id;
+
+      //checking the session role is equal to manager or admin
+      if(role == "manager" || role == "admin")
+      {
+        //verifying is complete - passing session details through middleware
+        req.sessionDetails = {userId, role};
+        next();
+      }
+      else
+      {
+        //return role insufficient 
+        console.log('role access insufficient');
+        return res.status(403).send(); 
+      }     
+    }
+  };
+
+  exports.verify_manager = function (req, res, next) {
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      console.log('user session not found');
+      return res.status(403).send(); 
+    } 
+    else 
+    {
+      //accessing session details
+      const role = req.session.user.role;
+      const userId = req.session.user.id;
+
+      //checking the session role is equal to manager or admin
+      if(role == "manager")
+      {
+        //verifying is complete - passing session details through middleware
+        req.sessionDetails = {userId, role};
+        next();
+      }
+      else
+      {
+        //return role insufficient 
+        console.log('role access insufficient');
+        return res.status(403).send(); 
+      }     
+    }
+  };
+
+  exports.verify_member = function (req, res, next) {
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      console.log('user session not found');
+      return res.status(403).send(); 
+    } 
+    else 
+    {
+      //accessing session details
+      const role = req.session.user.role;
+      const userId = req.session.user.id;
+
+      //checking the session role is equal to manager or admin
+      if(role == "member")
+      {
+        //verifying is complete - passing session details through middleware
+        req.sessionDetails = {userId, role};
+        next();
+      }
+      else
+      {
+        //return role insufficient 
+        console.log('role access insufficient');
+        return res.status(403).send(); 
+      }     
+    }
+  };
+
+  exports.verify_member_or_higher = function (req, res, next) {
+    //Check if user information is stored in the session
+    if (!req.session.user) {
+      console.log('user session not found');
+      return res.status(403).send(); 
+    } 
+    else 
+    {
+      //accessing session details
+      const role = req.session.user.role;
+      const userId = req.session.user.id;
+
+      //checking the session role is equal to manager or admin
+      if(role == "member" || role == "manager" || role == "admin")
+      {
+        //verifying is complete - passing session details through middleware
+        req.sessionDetails = {userId, role};
+        next();
+      }
+      else
+      {
+        //return role insufficient 
+        console.log('role access insufficient');
+        return res.status(403).send(); 
+      }     
     }
   };
 
