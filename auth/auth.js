@@ -12,7 +12,8 @@ exports.login = function (req, res,next) {
         return res.status(401).send();
       }
       if (!user) {
-        return res.render("account/register");
+        let errorMessage = "could not find a user with that email address";
+        return res.render("user/login", {errorMessage: errorMessage});
       }    
       //compare provided password with stored passwordHash
       bcrypt.compare(password, user.passwordHash, function (err, result) {
@@ -25,7 +26,8 @@ exports.login = function (req, res,next) {
           };
           next();
         } else {
-          return res.render("user/login");
+          let errorMessage = "password incorrect";
+          return res.render("user/login", {errorMessage: errorMessage});
         }
       });
     });

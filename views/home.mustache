@@ -15,6 +15,17 @@
                 {{#user}}
                     <a id="logout" href="/user/logout" class="btn btn-primary">Logout</a>
                     <a id="my_account" href="/user/details" class="btn btn-primary"> My Account </a>
+                    <hr>
+                    {{#member}}
+                        <a href="/donation/make_donation" class="btn btn-primary">Make a Donation</a>
+                    {{/member}}                    
+                    <hr>
+                    {{#admin}}
+                        <a href="/admin/dashboard" class="btn btn-primary">Admin Dashboard</a>
+                    {{/admin}}
+                    {{#manager}}
+                        <a href="/manager/dashboard" class="btn btn-primary">Manager Dashboard</a>
+                    {{/manager}}
                 {{/user}}
                 {{^user}}
                     <a id="register" href="/user/register" class="btn btn-primary">Register</a>
@@ -25,63 +36,38 @@
     </div>
 </div>
 
-<br/>
-
 <div class="container">
     <div class="card mb-3">
         <div class="card-body">
-            <h2 class="card-title">More about us:</h2>
-            <div class="card-text">
-                <a href="/about" class="btn btn-primary">About Us</a>
-            </div>
+            <img src="https://scottishpantrynetwork.org.uk/wp-content/uploads/2020/09/scottish-pantry-network-logo.jpg" alt="Description of the image" style="width: 100%;">
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">Have a Question?</h2>
-            <div class="card-text">
-                <a href="/contact" class="btn btn-primary">Contact Us</a>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">More about us:</h2>
+                    <div class="card-text">
+                        <a href="/about" class="btn btn-primary">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Have a Question?</h2>
+                    <div class="card-text">
+                        <a href="/contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-{{#user}}
-<div class="container">
-    {{#admin}}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">Admin Functionality</h2>
-            <div class="card-text">
-                <a href="/admin/dashboard" class="btn btn-primary">Admin Dashboard</a>
-            </div>
-        </div> 
-    </div>
-    {{/admin}}
-    {{#manager}}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">Manager Functionality</h2>
-            <div class="card-text">
-                <a href="/manager/dashboard" class="btn btn-primary">Manager Dashboard</a>
-            </div>
-        </div>
-    </div>
-    {{/manager}}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">Authorized User Functionality</h2>
-            <div class="card-text">
-                <a href="/make_donation" class="btn btn-primary">Make a Donation</a>
-            </div>
-        </div>
-    </div>
-</div>
-{{/user}}
 
 </body>
 </html>

@@ -28,6 +28,9 @@
                 </div>
             </div>
             <input type="submit" class="btn btn-primary" value="Sign In">
+            {{#errorMessage}}
+                <p style="color: white; font-weight: bold;">{{errorMessage}}</p>
+            {{/errorMessage}}
         </form>
     </div>
 </body>

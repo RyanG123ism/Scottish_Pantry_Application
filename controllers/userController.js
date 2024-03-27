@@ -84,15 +84,5 @@ exports.details = function (req, res) {
 
 };
 
-//   exports.get_all_users = async(req, res) => {
-//     try {
-//         // Query the database for seeded data (adjust the querying logic based on your data structure)
-//         const users = await User.getAllUsers();
-//         // Render the data
-//         res.json({ users });
-//     } catch (error) {
-//         console.error('Error processing GET request:', error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
-// }
+
   

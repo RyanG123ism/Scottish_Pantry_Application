@@ -8,31 +8,36 @@
 {{>bodyHeading}}
 
 <div class="container">
-    <div class="card mb-3 bg-light">
-        <div class="card-body">
-            <h2 class="card-title">Warehouse Donations</h2>
-            <div class="card-text">
+    <div style="max-width: 1000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px; text-align: left;">Food Item</th>
+                    <th style="padding: 8px; text-align: left;">Total Weight</th>
+                    <th style="padding: 8px; text-align: left;">Total Quantity</th>
+                    <th style="padding: 8px; text-align: left;">Category</th>
+                    <th style="padding: 8px; text-align: left;">Donated On</th>
+                    <th style="padding: 8px; text-align: left;">Donated By</th>
+                </tr>
+            </thead>
+            <tbody>
                 {{#donations}}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item: {{foodItem}}</h5>
-                        <p class="card-text">Total Weight: {{weightKg}}</p>
-                        <p class="card-text">Total Quantity: {{qty}}</p>
-                        <p class="card-text">Category: {{category}}</p>
-                        <p class="card-text">Donated On: {{donatedOn}}</p>
-                        <p class="card-text">Donated By: {{userId}} </p>                        
-                    </div>
-                </div>
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{foodItem}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{weightKg}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{qty}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{category}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{donatedOn}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{userId}}</td>
+                </tr>
                 {{/donations}}
                 {{^donations}}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text">No Donations as of Now!</p>
-                    </div>
-                </div>
+                <tr>
+                    <td colspan="6" style="padding: 8px; border-bottom: 1px solid #ddd;">No Donations as of Now!</td>
+                </tr>
                 {{/donations}}
-            </div>
-        </div>
+            </tbody>
+        </table>
     </div>
 </div>
 

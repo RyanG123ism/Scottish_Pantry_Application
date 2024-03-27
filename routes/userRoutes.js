@@ -5,7 +5,7 @@ const auth = require('../auth/auth.js');
 
 
 //GET ROUTES
-router.get("/details", auth.verify_logged_in, controller.details)
+router.get("/details", auth.verify_logged_in, controller.details);
 
 //POST ROUTES
 

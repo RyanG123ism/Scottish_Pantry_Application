@@ -29,8 +29,8 @@ exports.submit_contact_form = async (req, res) => {
     //adds new contact form to DB 
     Contact.addContactForm(newContact, (err, contact) => {
         if (err) {
-            console.error('Error saving contact form:', err);
-            res.redirect('/contact?error=true');
+            let errorMessage = "Sorry, we had an issue submitting your form - please try again";
+            res.redirect('/contact', {errorMessage: errorMessage});
         } else {
             console.log('Contact form submitted:' , newContact);
 

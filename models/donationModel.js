@@ -74,15 +74,20 @@ seedAcceptedDonationsListData() {
 
 seedDonationData() {
     return new Promise((resolve, reject) => {
+
+        //creating a use by date for all seeded donation items
+        const newDate = new Date();
+        newDate.setDate(newDate.getDate() + 5);
+
         const donations = [
-            { _id: 'donationId1', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit', price: 5.99, weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId2', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg', price: 3.00, weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId3', userId: 'userId2', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods', price: 2.00, weightKg: NaN, qty: 5, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId4', userId: 'userId4', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg', price: 3.00, weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId5', userId: 'userId5', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit', price: 5.99, weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId6', userId: 'userId6', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg', price: 3.00, weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId7', userId: 'userId7', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods', price: 2.00, weightKg: NaN, qty: 5, donatedOn: new Date().toISOString().split('T')[0]},
-            { _id: 'donationId8', userId: 'userId8', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg', price: 3.00, weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0]},
+            { _id: 'donationId1', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit',  weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId2', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg',  weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId3', userId: 'userId2', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods',  weightKg: "N/A", qty: 5, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId4', userId: 'userId4', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg',  weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId5', userId: 'userId5', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit',  weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId6', userId: 'userId6', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg',  weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId7', userId: 'userId7', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods',  weightKg: "N/A", qty: 6, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId8', userId: 'userId8', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg', weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
         ];
 
         // Array to store promises for each seeding operation
@@ -245,8 +250,25 @@ addDonationItem(donationItem) {
     
     }
 
-
+//adds donation into the DB  
+addDonation(donation) {
+    return new Promise((resolve, reject) => {
+        this.dbManager.db.insert(donation, (err, newDonation) => {
+            if (err) {
+                //handle errors
+                console.error('Error adding donation item:', err);
+                reject(err);
+            } else {
+                console.log('Donation added: ', newDonation);
+                resolve(newDonation);
+            }
+            });
+        })
+    
+    }
+    
 }
+
 
 const donation = new Donation(dbManager);
 
