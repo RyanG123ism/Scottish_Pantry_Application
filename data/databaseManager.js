@@ -17,7 +17,7 @@ class DatabaseManager {
         
     }
 
-    //multiple seeding objects - not using due to circular dependencies error
+    //multiple seeding objects - not using due to circular dependencies error - seeding is manually called through model files at the moment
     async seedDatabase() {
         console.log('seeding database....');
         

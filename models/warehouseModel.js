@@ -11,8 +11,8 @@ class Warehouse {
             throw new Error('A NeDB instance must be provided.');
         }
     }  
-
-    async seedData() {
+//seeding warehouse data
+async seedData() {
         return new Promise((resolve, reject) => {
             const warehouses = [
                 //staffMembers[] will eventually be a list of staff attached to that warehouse - for now its just the manager
@@ -62,8 +62,8 @@ class Warehouse {
     }
 
 
-    //adds a contact form into the DB 
-    addStockRequest(stockRequestData, callback) {
+//adds a stock request form 
+addStockRequest(stockRequestData, callback) {
         // Insert the contact data into the database
         return new Promise((resolve, reject) => {
             this.dbManager.db.insert(stockRequestData, (err, newStockRequest) => {
@@ -80,8 +80,8 @@ class Warehouse {
     
     }
 
-    //a function to return all users from the database by using the email - only users have an email
-    getAllWarehouses() {
+//a function to return all warehouses from the database by using the address - only users have an address
+getAllWarehouses() {
         return new Promise((resolve, reject) => {
             this.dbManager.db.find({ address: { $exists: true } }, function(err, warehouses) {
                 if (err) {
@@ -95,8 +95,9 @@ class Warehouse {
             })
     }
 
-    findByManagerId(managerId) {
-        return new Promise((resolve, reject) => {
+//finds a warehouse based off the managers ID
+findByManagerId(managerId) {
+    return new Promise((resolve, reject) => {
             this.getAllWarehouses()
                 .then(warehouses => {
                     //finding the managers warehouse
@@ -112,8 +113,8 @@ class Warehouse {
         });
     }
 
-    //a function to return all users from the database by using the email - only users have an email
-    getAllStockRequests() {
+//returns all stock request forms
+getAllStockRequests() {
         return new Promise((resolve, reject) => {
             this.dbManager.db.find({ notes: { $exists: true } }, function(err, stockRequests) {
                 if (err) {
@@ -127,8 +128,8 @@ class Warehouse {
             })
     }
 
-    //finds a specific stock request by ID
-    findStockRequestById(requestId) {
+//finds a specific stock request by ID
+findStockRequestById(requestId) {
         return new Promise((resolve, reject) => {
             this.dbManager.db.findOne({ _id: requestId, notes: { $exists: true } }, function(err, stockRequest) {
                 if (err) {
@@ -142,8 +143,8 @@ class Warehouse {
             })
     }
 
-    //updates an existing stock request status 
-    updateStockRequest(stockRequest) {
+//updates an existing stock request status 
+updateStockRequest(stockRequest) {
         return new Promise((resolve, reject) => {
             this.dbManager.db.update({ _id: stockRequest._id }, { $set: { status: stockRequest.status } }, {}, function(err, stockRequest) {
                 if (err) {

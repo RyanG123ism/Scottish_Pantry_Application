@@ -1,52 +1,50 @@
 
 //landing page for home controller - will return the application home page
 exports.landing_page = async(req, res) => {
-     // Check if user is logged in
+     //check if user is logged in
      if (req.session.user) {
-        // If user is logged in, retrieve user data from session
         const user = req.session.user;
         const userRole = user.role;
 
         if(userRole == "admin")
         {
-            // Render the view with admin access
+            //render the view with admin access
             res.render('home', { user: user, admin: userRole });
         }
         else if(userRole == "manager")
         {
-            // Render the view with manager access
+            //render the view with manager access
             res.render('home', { user: user, manager: userRole });
         }
         else{
-            // Render the view with regular member access
+            //render the view with regular member access
             res.render('home', { user: user, member: userRole });
         }      
     } else {
-        // If user is not logged in, render the view without user data
+        //if user is not logged in, render the view without user data
         res.render('home');
     }         
 }
 
-// Returns home page
+//returns home page
 exports.home = async (req, res) => {
-    // Check if user is logged in
+    //check if user is logged in
     if (req.session.user) {
-        // If user is logged in, retrieve user data from session
         const user = req.session.user;
         const userRole = user.role;
 
         if(userRole == "admin")
         {
-            // Render the view with admin access
+            //render the view with admin access
             res.render('home', { user: user, admin: userRole });
         }
         else if(userRole == "manager")
         {
-            // Render the view with manager access
+            //render the view with manager access
             res.render('home', { user: user, manager: userRole });
         }
         else{
-            // Render the view with regular member access
+            //render the view with regular member access
             res.render('home', { user: user, member: userRole });
         }      
     } else {
@@ -54,7 +52,6 @@ exports.home = async (req, res) => {
         res.render('home');
     }  
 };
-
 
 //returns the about page
 exports.about_page = async(req, res) => {

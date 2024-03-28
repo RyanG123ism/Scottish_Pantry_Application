@@ -2,10 +2,9 @@ const Warehouse = require('../models/warehouseModel');
 const Donation = require('../models/donationModel');
 
 //function to generate stocklist for ANY or ALL warehouses in the system
-const generateWarehouseStockList = async (donations) => {
-    
+const generateWarehouseStockList = async (donations) => {   
     const groupedStock = donations.reduce((acc, donation) => {
-        //groups by food item using accumulator 
+        //groups by food item using accumulator - this is to group all donations into one stock list - ie: 2 donations of 6 cans of beans will be grouped as one Item with 12 qty
         if (!acc[donation.foodItem]) {
             acc[donation.foodItem] = {
                 foodItem: donation.foodItem,
@@ -15,33 +14,28 @@ const generateWarehouseStockList = async (donations) => {
                 category: donation.category, // colates all the catagories together to display as one
             };
         }
-
         //if item is canned or boxed - remove weight variable
         //if not - remove QTY variable
-        if (donation.category === 'tinned goods' || donation.category === 'boxed goods') {
-            acc[donation.foodItem].totalWeight = 'Not Applicable';
+        if (donation.category !== 'meat' && donation.category !== 'fruit' && donation.category !== 'veg') {
+            acc[donation.foodItem].totalWeight = 'N/A';
             acc[donation.foodItem].totalQty += isNaN(donation.qty) ? 0 : donation.qty;
         } else {
             acc[donation.foodItem].totalWeight += isNaN(donation.weightKg) ? 0 : donation.weightKg;
-            acc[donation.foodItem].totalQty = isNaN(acc[donation.foodItem].totalQty) ? 0 : acc[donation.foodItem].totalQty; //Initialize totalQty to 0 if it's not a number
-            acc[donation.foodItem].totalQty += isNaN(donation.qty) ? 0 : donation.qty;
+            acc[donation.foodItem].totalQty = 1; //meat, fruit and veg will always have qty 1 as they are measured by weight instead
         }
-
         return acc;
     }, {});
 
     // Convert groupedStock object into array
     const stockList = Object.values(groupedStock);
-
     return stockList;
 };
 
-//function to generate stock list for ANY or ALL warehouses in the system
+//function to generate a list of all unique food items present in the donations. 
 const generateAllFoodItemsList = async () => {
     
     //gets all donations - use this to find all unique foodItems
     const donations = await Donation.getAllDonations();
-
     const uniqueFoodItems = donations.reduce((acc, donation) => {
         //returns a list of all unique foodItems  
         if (!acc[donation.foodItem]) {
@@ -57,7 +51,6 @@ const generateAllFoodItemsList = async () => {
 
     return stockList;
 };
-
 
 //returns a stock list for ONE warehouse
 exports.view_stock = async (req, res) => {
@@ -134,7 +127,7 @@ exports.view_warehouse_donations = async (req, res) => {
     
 }
 
-// Handle form submission for contact forms
+//get method - returns stock request form 
 exports.create_stock_request = async (req, res) => {
 
     //gets warehouse Id from req.params and the form data from the req.body
@@ -147,7 +140,7 @@ exports.create_stock_request = async (req, res) => {
     res.render('manager/stockRequestForm', {stockList: stockList, warehouseId: warehouseId});
 };
 
-// Handle form submission for contact forms
+//post method - creates a stock request 
 exports.post_create_stock_request = async (req, res) => {
 
     //gets warehouse Id from req.params and the form data from the req.body
@@ -194,7 +187,7 @@ exports.view_all_pending_stock_requests = async (req, res) => {
     }
 };
 
-//view all stock requests with "pending" status
+//view all stock requests with "approved" status
 exports.view_all_approved_stock_requests = async (req, res) => {
     try {
         const stockRequests = await Warehouse.getAllStockRequests();
@@ -214,7 +207,7 @@ exports.view_all_approved_stock_requests = async (req, res) => {
     }
 };
 
-//view all stock requests with "pending" status
+//view all stock requests with "declined" status
 exports.view_all_declined_stock_requests = async (req, res) => {
     try {
         const stockRequests = await Warehouse.getAllStockRequests();
@@ -254,7 +247,7 @@ exports.post_approve_request = async (req, res) => {
     }
 };
 
-//updates stock request status to approved
+//updates stock request status to declined
 exports.post_decline_request = async (req, res) => {
     try {
         //gets the stock request id from the req params

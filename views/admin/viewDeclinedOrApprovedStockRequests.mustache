@@ -7,42 +7,53 @@
 
 {{>bodyHeading}}
 
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <h1 style="text-align: center;">All Stock Requests</h1>
-    <br/>
-    <h4>Accepting a stock request submission will send a pick up order to the corresponding Depot. Declining the submission will delete the request.</h4>
-    <h5>Once a request is accepted/declined it cannot be changed</h5>
-    <br/>
-    <a href="/warehouse/view_all_Approved_stock_requests" class="btn btn-primary">Approved Stock Request's</a> 
-    <br/>
-    <a href="/warehouse/view_all_declined_stock_requests" class="btn btn-primary">Declined Stock Request's</a>
-    <br/>
-    <a href="/warehouse/view_all_pending_stock_requests" class="btn btn-primary">Pending Stock Request's</a>
-    <div style="max-width: 1000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <table style="border-collapse: collapse; width: 100%;">
-            <thead>
-                <tr>
-                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Warehouse ID</th>
-                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Food Item</th>
-                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Notes</th>
-                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Request Date</th>
-                    <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#stockRequests}}
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{warehouseId}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{foodItem}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{notes}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{requestedOn}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{status}}</td>
-                </tr>
-                {{/stockRequests}}
-            </tbody>
-        </table>
-    </div>
+<div class="container">
+   <div class="row justify-content-center">
+      <div class="col-md-8">
+         <div class="card text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
+            <div class="card-body">
+               <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                  <h1 style="text-align: center;">All Stock Requests</h1>
+                  <br/>
+                  <h4>Accepting a stock request submission will send a pick up order to the corresponding Depot. Declining the submission will delete the request.</h4>
+                  <h5>Once a request is accepted/declined it cannot be changed</h5>
+                  <br/>
+                  <a href="/warehouse/view_all_Approved_stock_requests" class="btn btn-primary">Approved Stock Request's</a> 
+                  <br/>
+                  <a href="/warehouse/view_all_declined_stock_requests" class="btn btn-primary">Declined Stock Request's</a>
+                  <br/>
+                  <a href="/warehouse/view_all_pending_stock_requests" class="btn btn-primary">Pending Stock Request's</a>
+                  <div style="max-width: 1000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                     <table style="border-collapse: collapse; width: 100%;">
+                        <thead>
+                           <tr>
+                              <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Warehouse ID</th>
+                              <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Food Item</th>
+                              <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Notes</th>
+                              <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Request Date</th>
+                              <th style="padding: 8px; background-color: #f2f2f2; text-align: left;">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {{#stockRequests}}
+                           <tr>
+                              <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{warehouseId}}</td>
+                              <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{foodItem}}</td>
+                              <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{notes}}</td>
+                              <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{requestedOn}}</td>
+                              <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{status}}</td>
+                           </tr>
+                           {{/stockRequests}}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 </body>
 </html>
+

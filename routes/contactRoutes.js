@@ -8,7 +8,7 @@ router.get("/view_all_contact_forms", auth.verify_manager_or_higher, controller.
 
 //POST ROUTES
 router.post('/submit_contact_form', controller.submit_contact_form);
-router.post("/delete_contact_form", controller.delete_contact_form);
+router.post("/update_contact_form", controller.update_contact_form);
 
 
 

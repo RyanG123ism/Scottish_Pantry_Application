@@ -11,10 +11,12 @@ exports.dashboard = async(req, res) => {
 //returns all users in the DB 
 exports.user_dashboard = async(req, res) => {
     try {
-        // Query the database for seeded data (adjust the querying logic based on your data structure)
+        //query the database for seeded data
         const users = await User.getAllUsers()
-        // Render the data
-        res.render("admin/allUsers", {users: users});
+        //filters out admin roles so admins cant access / edit their own details
+        const usersWithoutAdmin = users.filter(user => user.role !== 'admin');
+
+        res.render("admin/allUsers", {users: usersWithoutAdmin});
     } catch (error) {
         console.error('Error processing GET request:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -60,7 +62,7 @@ exports.user_details = async(req, res) => {
                 return res.render("error looking up user - does not exist");
             }
 
-            // Once user is found, retrieve donations for the user
+            //once user is found, retrieve donations for the user
             Donation.getUsersDonations(userId, function (err, donations) {
                 if (err) {
                     console.log("Error looking up donations", err);
@@ -70,7 +72,7 @@ exports.user_details = async(req, res) => {
                     return res.render("error looking up donation - does not exist");
                 }
 
-                // Render the view with user and donations data
+                //render the view with user and donations data
                 res.render('user/details', { user: user, donations: donations });
             });
         });

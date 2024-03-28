@@ -14,12 +14,13 @@
         <p>Email: {{ email }}</p>
         <p>Phone: {{ phone }}</p>
         <p>Contact Request: {{ question }}</p>
+        <p>Contacted?: {{ contacted }}</p>
     </div>
      
-        <form action="/contact/delete_contact_form" method="POST">
+        <form action="/contact/update_contact_form" method="POST">
             <!-- Hidden input field to hold the ID -->
             <input type="hidden" name="_id" value="{{ _id }}">
-            <button type="submit">Delete</button>
+            <button type="submit">Update Status</button>
         </form>
 
     {{/contactForms}}

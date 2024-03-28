@@ -8,35 +8,53 @@
 {{>bodyHeading}}
 
 <div class="container">
-    <div class="row">
-        {{#users}}
-        <div class="col-md-4">
-            <div class="card mb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
                 <div class="card-body">
-                    <h5 class="card-title">{{firstName}} {{lastName}}</h5>
-                    <p class="card-text"><strong>Email:</strong> <a href="/admin/user_details/{{_id}}">{{email}}</a></p>
-                    <p class="card-text"><strong>ID:</strong> {{_id}}</p>
-                    <p class="card-text"><strong>Role:</strong> {{role}}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/user/{{_id}}/edit" class="btn btn-primary">Edit</a>
-                    <a href="/user/{{_id}}/deactivate" class="btn btn-danger">Deactivate</a>
+                    <h5 class="card-title">Users</h5>
+                    <a href="/user/create_user" class="btn btn-primary">Create New User</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>ID</th>
+                                    <th>Role</th>
+                                    <th>Account Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#users}}
+                                <tr>
+                                    <td>{{firstName}} {{lastName}}</td>
+                                    <td><a href="/admin/user_details/{{_id}}">{{email}}</a></td>
+                                    <td>{{_id}}</td>
+                                    <td>{{role}}</td>
+                                    <td>{{status}}</td>
+                                    <td>
+                                        <a href="/user/edit_as_admin/{{_id}}" class="btn btn-primary">Edit</a>    
+
+                                        <a href="/user/update_status/{{_id}}" class="btn btn-danger">Update Status</a>                                                  
+                                   </td>
+                                </tr>
+                                {{/users}}
+                                {{^users}}
+                                <tr>
+                                    <td colspan="5">No users to display</td>
+                                </tr>
+                                {{/users}}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-        {{/users}}
     </div>
 </div>
-
-{{^users}}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <p>No users to display</p>
-        </div>
-    </div>
-</div>
-{{/users}}
 
 </body>
 </html>
+

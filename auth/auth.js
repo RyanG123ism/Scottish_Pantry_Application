@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
 
+//handles login functionality
 exports.login = function (req, res,next) {
     let email = req.body.email;
     let password = req.body.password;
@@ -14,7 +15,15 @@ exports.login = function (req, res,next) {
       if (!user) {
         let errorMessage = "could not find a user with that email address";
         return res.render("user/login", {errorMessage: errorMessage});
-      }    
+      } 
+      
+      //if the account is deactivated
+      if(user.status == "deactivated")
+      {
+        let errorMessage = 'this account is currently deactivated';
+        res.render('user/login', {errorMessage: errorMessage});
+        return;
+      }
       //compare provided password with stored passwordHash
       bcrypt.compare(password, user.passwordHash, function (err, result) {
         if (result) {
@@ -22,7 +31,8 @@ exports.login = function (req, res,next) {
           req.session.user = {
             email: email,
             id: user._id,
-            role: user.role//passing the role into the session
+            role: user.role,//passing the role into the session
+            status: user.status //status of the account - active / deactivated
           };
           next();
         } else {
@@ -33,12 +43,21 @@ exports.login = function (req, res,next) {
     });
   }; 
 
+  //verifies a user is logged in 
   exports.verify_logged_in = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
       console.log('user session not found');
       return res.status(403).send(); 
     } else {
+
+      //if the account is deactivated
+      if(req.session.user.status == "deactivated")
+      {
+        console.log('this account is currently deactivated');
+        res.render('this account is currently deactivated');
+        return;
+      }
 
       //accessing session details
       const userId = req.session.user.id;
@@ -51,6 +70,7 @@ exports.login = function (req, res,next) {
     }
   };
 
+  //verifies admin role
   exports.verify_admin = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
@@ -78,6 +98,7 @@ exports.login = function (req, res,next) {
     }
   };
 
+  //verifies manager or admin role
   exports.verify_manager_or_higher = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
@@ -86,6 +107,15 @@ exports.login = function (req, res,next) {
     } 
     else 
     {
+
+      //if the account is deactivated
+      if(req.session.user.status == "deactivated")
+      {
+        console.log('this account is currently deactivated');
+        res.render('this account is currently deactivated');
+        return;
+      }
+
       //accessing session details
       const role = req.session.user.role;
       const userId = req.session.user.id;
@@ -106,6 +136,7 @@ exports.login = function (req, res,next) {
     }
   };
 
+  //verifies manager role
   exports.verify_manager = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
@@ -114,6 +145,15 @@ exports.login = function (req, res,next) {
     } 
     else 
     {
+
+      //if the account is deactivated
+      if(req.session.user.status == "deactivated")
+      {
+        console.log('this account is currently deactivated');
+        res.render('this account is currently deactivated');
+        return;
+      }
+
       //accessing session details
       const role = req.session.user.role;
       const userId = req.session.user.id;
@@ -134,6 +174,7 @@ exports.login = function (req, res,next) {
     }
   };
 
+  //verifies member role
   exports.verify_member = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
@@ -142,6 +183,15 @@ exports.login = function (req, res,next) {
     } 
     else 
     {
+
+      //if the account is deactivated
+      if(req.session.user.status == "deactivated")
+      {
+        console.log('this account is currently deactivated');
+        res.render('this account is currently deactivated');
+        return;
+      }
+
       //accessing session details
       const role = req.session.user.role;
       const userId = req.session.user.id;
@@ -162,6 +212,7 @@ exports.login = function (req, res,next) {
     }
   };
 
+  //verifies member, admin or manager role
   exports.verify_member_or_higher = function (req, res, next) {
     //Check if user information is stored in the session
     if (!req.session.user) {
@@ -170,6 +221,15 @@ exports.login = function (req, res,next) {
     } 
     else 
     {
+
+      //if the account is deactivated
+      if(req.session.user.status == "deactivated")
+      {
+        console.log('this account is currently deactivated');
+        res.render('this account is currently deactivated');
+        return;
+      }
+
       //accessing session details
       const role = req.session.user.role;
       const userId = req.session.user.id;

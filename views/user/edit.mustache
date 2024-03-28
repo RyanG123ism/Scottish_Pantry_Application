@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+
+{{>bodyHeading}}
+
+<div class="container">
+    <!-- User details card -->
+    <div class="card" style="border: 7px solid #66AFB6;">
+        <div class="card-header">
+            Edit User Details
+        </div>
+        <div class="card-body">
+            <!-- User details form -->
+            <form method="POST" action="/user/edit/{{user._id}}">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="{{user.firstName}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" value="{{user.lastName}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <input type="text" class="form-control" id="role" name="role" value="{{user.role}}" disabled>
+                </div>
+                {{#admin}}
+                <div class="form-group">
+                    <label for="userId">User ID:</label>
+                    <input type="text" class="form-control" id="userId" name="userId" value="{{user._id}}" disabled>
+                </div>
+                {{/admin}}
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{#errorMessage}}
+    <p style="color: white; font-weight: bold;">{{errorMessage}}</p>
+{{/errorMessage}}
+
+</body>
+</html>

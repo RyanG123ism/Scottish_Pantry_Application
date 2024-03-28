@@ -12,22 +12,22 @@ class User {
             throw new Error('A NeDB instance must be provided.');
         }
     }  
-
-    async seedData() {
+//seeding user data
+async seedData() {
         return new Promise((resolve, reject) => {
                     
             const users = [
-            { _id: 'userId1',  email: 'ryang123@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'grant', donations: [], role: "admin" },
-            { _id: 'userId2',  email: 'johndoe456@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'john', lastName: 'doe', donations: [], role: "manager"},
-            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: [] , role: "manager" },
-            { _id: 'userId4',  email: 'mike34@hotmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'mike', lastName: 'johnson', donations: [], role: "member"  },
-            { _id: 'userId5',  email: 'amy.white@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'amy', lastName: 'white', donations: [], role: "member"  },
-            { _id: 'userId6',  email: 'david.miller@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'david', lastName: 'miller', donations: [], role: "member"  },
-            { _id: 'userId7',  email: 'emily.roberts@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'emily', lastName: 'roberts', donations: [], role: "member"  },
-            { _id: 'userId8', email: 'alex.parker@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'alex', lastName: 'parker', donations: [], role: "member"  },
-            { _id: 'userId9',  email: 'lisa.king@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'lisa', lastName: 'king', donations: [], role: "member"  },
-            { _id: 'userId10',  email: 'ryan.jones@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'jones', donations: [], role: "member"  },
-            { _id: 'userId11',  email: 'carol.martin@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'carol', lastName: 'martin', donations: [], role: "member"  }
+            { _id: 'userId1',  email: 'ryang123@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'grant', donations: [], role: "admin", status: "active" },
+            { _id: 'userId2',  email: 'johndoe456@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'john', lastName: 'doe', donations: [], role: "manager", status: "active"},
+            { _id: 'userId3', email: 'susan92@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'susan', lastName: 'smith', donations: [] , role: "manager", status: "active" },
+            { _id: 'userId4',  email: 'mike34@hotmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'mike', lastName: 'johnson', donations: [], role: "member" , status: "active" },
+            { _id: 'userId5',  email: 'amy.white@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'amy', lastName: 'white', donations: [], role: "member", status: "active"  },
+            { _id: 'userId6',  email: 'david.miller@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'david', lastName: 'miller', donations: [], role: "member", status: "active"  },
+            { _id: 'userId7',  email: 'emily.roberts@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'emily', lastName: 'roberts', donations: [], role: "member", status: "active"  },
+            { _id: 'userId8', email: 'alex.parker@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'alex', lastName: 'parker', donations: [], role: "member", status: "active"  },
+            { _id: 'userId9',  email: 'lisa.king@yahoo.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'lisa', lastName: 'king', donations: [], role: "member", status: "active"  },
+            { _id: 'userId10',  email: 'ryan.jones@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'ryan', lastName: 'jones', donations: [], role: "member", status: "active"  },
+            { _id: 'userId11',  email: 'carol.martin@gmail.com', password: 'password', passwordHash: '$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse', firstName: 'carol', lastName: 'martin', donations: [], role: "member", status: "active"  }
             ];
     
             // Array to store promises for each seeding operation
@@ -69,19 +69,20 @@ class User {
                     reject(error);
                 });
         });
-    }
+}
     
-    //creating a new user with defined parameters
-    async createUser(email, firstName, lastName, password = []) {
+//creating a new user with defined parameters
+async createUser(email, firstName, lastName, password = []) {
         
         const newUser = {
         email,
         firstName,
         lastName,
-        password,//need to take this out eventually
+        password,//need to take this out eventually - in future this property will only be used to store password data during runtime but never saved to DB 
         passwordHash : await this.hashPassword(password), //using the password to store a hashed version
         donations : [], //creating an empty array of donations for a user
-        role : "member" // assigning member role to user
+        role : "member", // assigning member role to user
+        status : "active" 
         };
 
         //insert user into DB
@@ -94,8 +95,49 @@ class User {
         });
     }
 
-    //a function to return all users from the database by using the email - only users have an email
-    getAllUsers() {
+//creating a new user with defined parameters
+async adminCreateUser(email, firstName, lastName, password, role ) {
+        
+        const newUser = {
+        email,
+        firstName,
+        lastName,
+        password,//need to take this out eventually - in future this property will only be used to store password data during runtime but never saved to DB 
+        passwordHash : await this.hashPassword(password), //using the password to store a hashed version
+        donations : [], //creating an empty array of donations for a user
+        role, 
+        status : "active"
+        };
+
+        //insert user into DB
+        this.dbManager.db.insert(newUser, (err, insertedUser) => {
+        if (!err) {
+            console.log('User created:', insertedUser);
+        } else {
+            console.error('Error creating user:', err);
+        }
+        });
+    }
+
+//updates an existing user method
+update = function(userId, firstName, lastName, email, status) {
+    return new Promise((resolve, reject) => {
+        const updateQuery = { $set: { firstName, lastName, email, status } };
+
+        this.dbManager.db.update({ _id: userId }, updateQuery, { returnUpdatedDocs: true }, (err, numAffected, updatedUser) => {
+            if (err) {
+                reject(err);
+            } else if (numAffected === 0) {
+                reject(new Error('User not found'));
+            } else {
+                resolve(updatedUser);
+            }
+        });
+    });
+};
+
+//a function to return all users from the database by using the email - only users have an email
+getAllUsers() {
     return new Promise((resolve, reject) => {
         this.dbManager.db.find({ email: { $exists: true } }, function(err, users) {
             if (err) {
@@ -107,20 +149,20 @@ class User {
             
             })
         })
-    }
+}
 
-    // Define findById method
-    findById(userId, cb) {
+//finds a user by ID
+findById(userId, cb) {
         this.dbManager.db.findOne({ _id: userId }, function(err, user) {
             if (err) {
                 return cb(err, null);
             }
             cb(null, user);
         });
-    };
+};
     
-    //returns users in the DB with matching email
-    lookupEmail(email, cb) {
+//returns users in the DB with matching email
+lookupEmail(email, cb) {
         this.dbManager.db.find({ 'email': email }, function (err, entries) {
             if (err) {
                 return cb(err, null);
@@ -133,8 +175,8 @@ class User {
         });
     }
 
-    //hashes the users password
-    async hashPassword(password) {
+//hashes the users password
+async hashPassword(password) {
         const saltRounds = 10;//higher the saltRounds the more secure the hash
         return new Promise((resolve, reject) => {
             bcrypt.genSalt(saltRounds, (err, salt) => {

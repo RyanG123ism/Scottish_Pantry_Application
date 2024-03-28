@@ -11,11 +11,12 @@ class Donation {
     } 
     
 
-
+//seed items that users can donate
 seedAcceptedDonationsListData() {
     return new Promise ((resolve, reject) => {
         //seeding a list of accepted donation items - this is just a small example of the list of foods that SCP will be able to accept via donations
         //this is to stop users donating unwanted goods to the system - only items on this list will be able to be donated
+        //I would imagine that SCP has a list somewhere of what kind of items they accept but for the purpose of this app im just guessing
         //admins will be able to view and edit this list on the application so that there is scope to add more items and reduce the need for certain donations if need be.       
         const acceptedDonationItems = [
             {acceptedItem: "apples", acceptedItemCategory: "fruit" },
@@ -72,6 +73,7 @@ seedAcceptedDonationsListData() {
     });
 }    
 
+//seed donation data
 seedDonationData() {
     return new Promise((resolve, reject) => {
 
@@ -141,7 +143,7 @@ getUsersDonations(userId, cb) {
     });
 };
 
-
+//returns all donations
 getAllDonations() {
     return new Promise((resolve, reject) => {
         this.dbManager.db.find({ weightKg: { $exists: true } }, function(err, donations) {
@@ -188,7 +190,7 @@ getDonationsForWarehouse(warehouseId) {
     });
 }
 
-//retrieve donations for a specific warehouse ID
+//finding a unique food item from the accepted donations list 
 findAcceptedDonationListItem(acceptedDonationId) {
     return new Promise((resolve, reject) => {
         //finding the acceptedDontaiton object with acceptedDonationId and filtering by acceptedItem
@@ -233,7 +235,7 @@ remove(id) {
     });
 }
 
-//adds donation item into the DB  
+//adds donation item into the DB - not a donation, and ITEM that can be donated 
 addDonationItem(donationItem) {
     return new Promise((resolve, reject) => {
         this.dbManager.db.insert(donationItem, (err, newDonationItem) => {

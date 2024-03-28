@@ -1,0 +1,33 @@
+{"acceptedItem":"pears","acceptedItemCategory":"fruit","_id":"1tb1tOz2ljCbKj0P"}
+{"acceptedItem":"potatoes","acceptedItemCategory":"veg","_id":"9xG8NonMiilgSZig"}
+{"acceptedItem":"bananas","acceptedItemCategory":"fruit","_id":"FCDCLAXl5tNxbwan"}
+{"acceptedItem":"rice","acceptedItemCategory":"pantry items","_id":"KmcxrNxdgWI14ICe"}
+{"acceptedItem":"oranges","acceptedItemCategory":"fruit","_id":"OpCawc3wIFvGsOoh"}
+{"acceptedItem":"apples","acceptedItemCategory":"fruit","_id":"QOgYszHdIDCGddAx"}
+{"acceptedItem":"beans","acceptedItemCategory":"tinned goods","_id":"Yzq28aDt8OR0H6UI"}
+{"_id":"donationId1","userId":"userId1","warehouseId":"warehouseId1","foodItem":"apples","category":"fruit","weightKg":1.2,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId2","userId":"userId1","warehouseId":"warehouseId1","foodItem":"carrots","category":"veg","weightKg":0.8,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId3","userId":"userId2","warehouseId":"warehouseId2","foodItem":"beans","category":"tinned goods","weightKg":"N/A","qty":5,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId4","userId":"userId4","warehouseId":"warehouseId2","foodItem":"potatoes","category":"veg","weightKg":2.2,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId5","userId":"userId5","warehouseId":"warehouseId1","foodItem":"apples","category":"fruit","weightKg":1.2,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId6","userId":"userId6","warehouseId":"warehouseId1","foodItem":"carrots","category":"veg","weightKg":0.8,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId7","userId":"userId7","warehouseId":"warehouseId2","foodItem":"beans","category":"tinned goods","weightKg":"N/A","qty":6,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"_id":"donationId8","userId":"userId8","warehouseId":"warehouseId2","foodItem":"potatoes","category":"veg","weightKg":2.2,"qty":1,"donatedOn":"2024-03-28","useByDate":"2024-04-02"}
+{"acceptedItem":"onions","acceptedItemCategory":"veg","_id":"eZ0rsPGHD929m0xx"}
+{"acceptedItem":"tomatoes","acceptedItemCategory":"tinned goods","_id":"rqBgHkoaiGA5exzW"}
+{"acceptedItem":"pasta","acceptedItemCategory":"pantry items","_id":"tSnaMkg9Ha2ELcFi"}
+{"acceptedItem":"garlic","acceptedItemCategory":"veg","_id":"tqkrFp7XtLne3EEb"}
+{"_id":"userId1","email":"ryang123@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"grant","donations":[],"role":"admin","status":"active"}
+{"_id":"userId10","email":"ryan.jones@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
+{"_id":"userId11","email":"carol.martin@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"carol","lastName":"martin","donations":[],"role":"member","status":"active"}
+{"_id":"userId2","email":"johndoe456@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"john","lastName":"doe","donations":[],"role":"manager","status":"active"}
+{"_id":"userId3","email":"susan92@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"susan","lastName":"smith","donations":[],"role":"manager","status":"active"}
+{"_id":"userId4","email":"mike34@hotmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"mike","lastName":"johnson","donations":[],"role":"member","status":"active"}
+{"_id":"userId5","email":"amy.white@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"amy","lastName":"white","donations":[],"role":"member","status":"active"}
+{"_id":"userId6","email":"david.miller@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"david","lastName":"miller","donations":[],"role":"member","status":"active"}
+{"_id":"userId7","email":"emily.roberts@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"emily","lastName":"roberts","donations":[],"role":"member","status":"active"}
+{"_id":"userId8","email":"alex.parker@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"alex","lastName":"parker","donations":[],"role":"member","status":"active"}
+{"_id":"userId9","email":"lisa.king@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"lisa","lastName":"king","donations":[],"role":"member","status":"active"}
+{"_id":"warehouseId1","managerId":"userId2","location":"Glasgow","address":"69-71 Aberdalgie Rd, Easterhouse","postcode":"G34 9HJ","staffMembers":["userId2"],"donations":["donationId1","donationId2"]}
+{"_id":"warehouseId2","managerId":"userId3","location":"Edinburgh","address":"42 John St, Penicuik","postcode":"EH26 8AB","staffMembers":["userId3"],"donations":["donationId3","donationId4"]}
+{"acceptedItem":"carrots","acceptedItemCategory":"veg","_id":"xkFWbYIzFibEad3v"}

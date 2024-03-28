@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const Donation = require('../models/donationModel');
 const Warehouse = require('../models/warehouseModel');
 
+//renders the dashboard
 exports.dashboard = async(req, res) => {
     try {
         //finds user using session details

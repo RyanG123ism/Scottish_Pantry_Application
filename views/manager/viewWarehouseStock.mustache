@@ -4,41 +4,44 @@
     {{>header}}
 </head>
 <body>
-
-{{>bodyHeading}}
-
-
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <h2>Stock Results</h2>
-    <div style="max-width: 1000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-    <table style="border-collapse: collapse; width: 100%;">
-        <thead>
-            <tr>
-                <th style="padding: 8px; background-color: #dcdcdc; text-align: left;">Food Item</th>
-                <th style="padding: 8px; background-color: #dcdcdc; text-align: left;">Total Weight</th>
-                <th style="padding: 8px; background-color: #dcdcdc; text-align: left;">Total Quantity</th>
-                <th style="padding: 8px; background-color: #dcdcdc; text-align: left;">Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#stockList}}
-            <tr>
-                <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{foodItem}}</td>
-                <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{totalWeight}}</td>
-                <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{totalQty}}</td>
-                <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{category}}</td>
-            </tr>
-            {{/stockList}}
-            {{^stockList}}
-            <tr>
-                <td colspan="4" style="padding: 8px; border-bottom: 1px solid #ddd;">No stock available.</td>
-            </tr>
-            {{/stockList}}
-        </tbody>
-    </table>
-</div>
-<div/>
-
-
+    {{>bodyHeading}}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <h2 class="mb-4">Stock Results</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Food Item</th>
+                                        <th>Total Weight</th>
+                                        <th>Total Quantity</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#stockList}}
+                                    <tr>
+                                        <td>{{foodItem}}</td>
+                                        <td>{{totalWeight}}</td>
+                                        <td>{{totalQty}}</td>
+                                        <td>{{category}}</td>
+                                    </tr>
+                                    {{/stockList}}
+                                    {{^stockList}}
+                                    <tr>
+                                        <td colspan="4">No stock available.</td>
+                                    </tr>
+                                    {{/stockList}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

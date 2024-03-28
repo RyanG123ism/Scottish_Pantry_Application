@@ -1,11 +1,12 @@
 const Donation = require('../models/donationModel');
 const Warehouse = require('../models/warehouseModel');
 
+//returns details page for a single donation
 exports.details = async(req, res) => {
     try {
-        //gets userId from req params and uses it to find user
+        //gets donationId from req params and uses it to find user
         const donationId = req.params.donationId;         
-            // Once user is found, retrieve donations for the user
+            //once donation is found, retrieve donations for the user
             Donation.getDonationById(donationId, function (err, donation) {
                 if (err) {
                     console.log("Error looking up donations", err);
@@ -14,13 +15,11 @@ exports.details = async(req, res) => {
                 if (!donation) {
                     return res.render("error looking up donation - does not exist");
                 }
-
-                // Render the view with user and donations data
                 res.render('donation/details', {donation: donation });
             });
        
     } catch (error) {
-        console.error('Error retrieving user details:', error);
+        console.error('Error retrieving donation details:', error);
         res.status(500).send('Internal Server Error');
     }
 }
@@ -94,6 +93,7 @@ exports.add_donation_item = async(req, res) => {
     }
 }
 
+//renders the donation page for the user
 exports.make_donation = async(req, res) => {
     try {
         //gets all warehouses to pass to view
@@ -108,9 +108,9 @@ exports.make_donation = async(req, res) => {
     }
 }
 
+//post method - creates a new donation for a user
 exports.post_make_donation = async(req, res) => {
     try {
-
         //gets all warehouses and donation list to pass to view incase error handling is called 
         const warehouses = await Warehouse.getAllWarehouses();
         const acceptedDonations = await Donation.getAcceptedDonationsList();

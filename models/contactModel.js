@@ -15,7 +15,6 @@ class Contact {
 
 //adds a contact form into the DB 
 addContactForm(contactData) {
-    // Insert the stock request into the database
     return new Promise((resolve, reject) => {
         this.dbManager.db.insert(contactData, (err, newContact) => {
             if (err) {
@@ -31,7 +30,7 @@ addContactForm(contactData) {
     
     }
 
-//a function to return all users from the database by using the question variable - only contact Objects have that variable
+//a function to return all contact forms from the database by using the question variable - only contact Objects have that variable
 getAllContactForms() {
     return new Promise((resolve, reject) => {
         this.dbManager.db.find({ question: { $exists: true } }, function(err, contactForms) {
@@ -45,6 +44,7 @@ getAllContactForms() {
         })
     }
 
+//deletes a contact form - not in use
 deleteContactForm(id) {
     return new Promise((resolve, reject) => {
         //finds the contact form with the given ID
@@ -58,9 +58,22 @@ deleteContactForm(id) {
         });
     });
     }
+
+//updates a contact form    
+updateContactForm(id) {
+        return new Promise((resolve, reject) => {
+            // Update the contact form with the given ID
+            // Set the contacted property to true
+            this.dbManager.db.update({ _id: id, question: { $exists: true } }, { $set: { contacted: true } }, { multi: false }, function(err, numUpdated) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(numUpdated); // Resolve with the number of documents updated
+                }
+            });
+        });
+    }
 }
-
-
 
 const contact = new Contact(dbManager);
 module.exports = contact;
