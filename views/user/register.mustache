@@ -1,33 +1,58 @@
-<html>
-   <head>
-      {{>header}}
-   </head>
-   <body class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
 
-   {{>bodyHeading}}
+    {{>bodyHeading}}   
 
-   <h1>{{title}}</h1>
-   <h2>New User Registration</h2>
-   <form method="post" action="/user/register">
-      <div class="form-group">
-         {{email-error}}
-         <label for="email">Email</label>
-         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
-      </div>
-      <div class="form-group">
-         <label for="firstName">First Name</label>
-         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" required>
-      </div>
-      <div class="form-group">
-         <label for="lastName">Last Name</label>
-         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name" required>
-      </div>
-      <div class="form-group">
-         <label for="password">Password (8 characters minimum)</label>
-         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" minlength="8" required>
-      </div>
-      <div class="form-group">
-         <input type="submit" value="Register" class="btn btn-primary">
-      </div>
-   </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="border: 7px solid #66AFB6; background-color: white; padding: 20px; border-radius: 10px; margin-top: 50px;">
+                    <h2 class="text-center">New User Registration</h2>
+                    <form method="post" action="/user/register">
+                        <div class="form-group">
+                            {{email-error}}
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password (8 characters minimum)</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" minlength="8" required>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Register" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Error Message -->
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{#errorMessage}}
+                    <p style="color: white; font-weight: bold;">{{errorMessage}}</p>
+                {{/errorMessage}}
+            </div>
+        </div>
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+{{>footer}}
 </body>
+</html>

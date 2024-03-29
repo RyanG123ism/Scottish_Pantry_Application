@@ -6,10 +6,11 @@
 <body>
     {{>bodyHeading}}
     <div class="container">
-        <div class="card" style="border: 7px solid #66AFB6;>
+        <h1 class="text-center" style="color: white;">Create a New Stock Request Form</h1>
+        <div class="card" style="border: 7px solid #66AFB6;">
             <div class="card-body">
-                <h2 class="card-title">Create a New Stock Request Form</h2>
-                <h3>This form will be submitted to head office where it will be approved/declined by the operations manager, based on your stock levels, and other warehouses stock levels.</h3>
+                <p>This form will be submitted to head office where it will be approved/declined by the operations manager, based on your stock levels, and other warehouses stock levels.
+                 Please also note that the Food Item list is limited to the available stock in other Pantry's. If you do not see the item you wish to request it means that other Pantry's also do not have this item.</p>
                 <form action="/warehouse/post_create_stock_request/{{warehouseId}}" method="post">
                     <div class="form-group">
                         <label for="foodItem">Food Item:</label>
@@ -30,5 +31,15 @@
             </div>
         </div>
     </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{>footer}}    
 </body>
 </html>

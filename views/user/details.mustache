@@ -9,7 +9,8 @@
 
 <div class="container">
     <!-- User details card -->
-    <div class="card" style="border: 7px solid #66AFB6;>
+    <h2 style="color: white;">Details</h2>
+    <div class="card mb-4" style="border: 7px solid #66AFB6;">
         <div class="card-header">
             User Details
         </div>
@@ -25,7 +26,8 @@
 
 <div class="container mt-4">
     <!-- Donations card -->
-    <div class="card">
+    <h2 style="color: white;">Donations</h2>
+    <div class="card mb-4" style="border: 7px solid #66AFB6;">
         <div class="card-header">
             Donations
         </div>
@@ -44,11 +46,16 @@
                 {{/.}}
             {{/donations}}
             {{^donations}}
-                <p>No donations found.</p>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p>No donations found.</p>
+                    </div>
+                </div>
             {{/donations}}
         </div>
     </div>
 </div>
 
+{{>footer}}
 </body>
 </html>

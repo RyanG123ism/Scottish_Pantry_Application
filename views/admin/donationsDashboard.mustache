@@ -8,9 +8,18 @@
 {{>bodyHeading}}
 
 <div class="container">
+    <!-- Donation Management Card -->
+    <div class="card mb-3 text-center" style="border: 7px solid #66AFB6;">
+        <div class="card-body">
+            <h2 class="card-title">Donation Management</h2>
+            <p class="card-text"> View and access all donation information across the pantry network - donations are final and can not be undone, therefore this is read only data. </p>
+        </div>
+    </div>
+
+    <!-- Warehouse Selection Card -->
     <div class="card mb-3">
-        <div class="card-body text-center">
-            <h2 class="card-title">Choose which warehouse to view donations from</h2>
+        <div class="card-body text-center" style="border: 7px solid #66AFB6;>
+            <h2 class="card-title">Donations From:</h2>
             <div class="card-text">
                 {{#warehouses}}
                     <a href="/warehouse/view_donations/{{_id}}" class="btn btn-primary">{{address}}</a>
@@ -23,6 +32,24 @@
         </div>
     </div>
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{{>footer}}
 
 </body>
 </html>

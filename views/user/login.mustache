@@ -1,37 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     {{>header}}
 </head>
-<body class="container">
+<body>
 
-     {{>bodyHeading}}   
+    {{>bodyHeading}}   
 
-    <h1>{{title}}</h1>
-    <h2>Log In</h2>
-    <div id="formContent">
-        <!-- Login Form -->
-        <form method="POST" action="/user/login">
-            <div class="form-group">
-                <label for="email" class="col-sm-2 col-formlabel">
-                    Email
-                </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control"  id="email" name="email" placeholder="email">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="border: 7px solid #66AFB6; background-color: white; padding: 20px; border-radius: 10px; margin-top: 50px;">
+                    <h2 class="text-center">Log In</h2>
+                    <!-- Login Form -->
+                    <form method="POST" action="/user/login">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary" value="Sign In">
+                        </div>  
+                    </form>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="password" class="col-sm-2 col-formlabel">
-                    Password
-                </label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control"  id="password" name="password"placeholder="password">
-                </div>
-            </div>
-            <input type="submit" class="btn btn-primary" value="Sign In">
-            {{#errorMessage}}
-                <p style="color: white; font-weight: bold;">{{errorMessage}}</p>
-            {{/errorMessage}}
-        </form>
+        </div>
     </div>
+
+    <!-- Error Message -->
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{#errorMessage}}
+                    <p style="color: white; font-weight: bold;">{{errorMessage}}</p>
+                {{/errorMessage}}
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    {{>footer}}
+
 </body>
 </html>

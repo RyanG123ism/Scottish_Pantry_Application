@@ -9,11 +9,18 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
+        <div class="col-md-12">
+            <!-- New card for the title and create button -->
+            <div class="card mb-4 text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
                 <div class="card-body">
-                    <h5 class="card-title">Users</h5>
+                    <h5 class="card-title">Users Management</h5>
+                    <p class="card-text">This is the User Dashboard. As an admin, you can acces and manage all users on this system via this page. To create a new user, click the 'Create New User' button. Accounts can also be disabled via the 'Update Status' button </p>
                     <a href="/user/create_user" class="btn btn-primary">Create New User</a>
+                </div>
+            </div>
+            <!-- Original card holding the table -->
+            <div class="card text-center" style="max-width: 100%; margin: auto; border: 7px solid #66AFB6;">
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -36,7 +43,6 @@
                                     <td>{{status}}</td>
                                     <td>
                                         <a href="/user/edit_as_admin/{{_id}}" class="btn btn-primary">Edit</a>    
-
                                         <a href="/user/update_status/{{_id}}" class="btn btn-danger">Update Status</a>                                                  
                                    </td>
                                 </tr>
@@ -54,7 +60,9 @@
         </div>
     </div>
 </div>
+<br/>
+
+{{>footer}}
 
 </body>
 </html>
-

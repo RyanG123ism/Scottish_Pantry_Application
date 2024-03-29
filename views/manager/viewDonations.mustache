@@ -8,6 +8,11 @@
 {{>bodyHeading}}
 
 <div class="container">
+
+        <div class="text-center mb-4">
+            <h1 style="color: white;">Donations List</h1>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card text-center" style="max-width: fit-content; margin: auto; border: 7px solid #66AFB6;">
@@ -31,7 +36,7 @@
                     <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{qty}}</td>
                     <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{category}}</td>
                     <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{donatedOn}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{userId}}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><a href="/admin/user_details/{{userId}}">{{userId}}</a></td>
                 </tr>
                 {{/donations}}
                 {{^donations}}
@@ -46,6 +51,8 @@
             </div>
         </div>
     </div>
+
+    {{>footer}}
 
 </body>
 </html>

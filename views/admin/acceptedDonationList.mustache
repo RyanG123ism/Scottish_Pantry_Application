@@ -8,22 +8,21 @@
 {{>bodyHeading}}
 
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <h1 style="text-align: center;">Accepted Donations List</h1>
-    <h4>These Items are what Scottish Pantry currently accept as donation Items. If there is an overflow of stock or simply less need for a specific item. The 'Remove' button can be used to
-        halt any further donations of this item. More items can also be introduced to the accepted donations list by clicking the 'Add' button. 
-    </h4>
-    <br/>
+    <!-- Title Card -->
+    <div class="text-center mb-4">
+            <h1 style="color: white;">Accepted Donations List</h1>
+    </div>
 
+    <!-- Explanation Card -->
     <div class="container">
-        <div class="card" style="border: 7px solid #66AFB6>
+        <div class="card mb-3" style="border: 7px solid #66AFB6;">
             <div class="card-body">
+                <p>These items are what Scottish Pantry currently accepts as donation items. If there is an overflow of stock or simply less need for a specific item, the 'Remove' button can be used to halt any further donations of this item. More items can also be introduced to the accepted donations list by clicking the 'Add' button.</p>
                 <form action="/donation/add_donation_item" method="post">
-
                     <div class="form-group">
                         <label for="acceptedItem">Food Item:</label>
                         <input type="text" class="form-control" id="acceptedItem" name="acceptedItem" required>
                     </div>
-    
                     <div class="form-group">
                         <label for="acceptedItemCategory">Category</label>
                         <select class="form-control" id="acceptedItemCategory" name="acceptedItemCategory" required>
@@ -38,44 +37,52 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-    
                     <button type="submit" class="btn btn-primary">Add</button>
                 </form>
             </div>
         </div>
     </div>
-    <div style="max-width: 2000px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <table style="border-collapse: collapse; width: 100%;">
-            <thead>
-                <tr>
-                    <th style="padding: 8px; text-align: left;">Item Id</th>
-                    <th style="padding: 8px; text-align: left;">Food Item</th>
-                    <th style="padding: 8px; text-align: left;">Category</th>
-                    <th style="padding: 8px; text-align: left;">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#acceptedDonations}}
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{_id}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{acceptedItem}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{acceptedItemCategory}}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                        <!-- Approve Form -->
-                        <form action="/donation/remove_accepted_donation_item/{{_id}}" method="post" style="display: inline;">
-                            <button type="submit" style="text-decoration: none; color: red; border: none; background: none; cursor: pointer;">Remove</button>
-                        </form>
-                    </td>
-                </tr>
-                {{/acceptedDonations}}
-                {{^acceptedDonations}}
-                    <p>no donation items to display</p>
-                {{/acceptedDonations}}
-            </tbody>
-        </table>
-        <br/>
+
+    <!-- Accepted Donations Table Card -->
+    <div class="container">
+        <div class="card mb-3" style="border: 7px solid #66AFB6;">
+            <div class="card-body">
+                <table class="table table-bordered table-striped" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Item Id</th>
+                            <th>Food Item</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#acceptedDonations}}
+                        <tr>
+                            <td>{{_id}}</td>
+                            <td>{{acceptedItem}}</td>
+                            <td>{{acceptedItemCategory}}</td>
+                            <td>
+                                <!-- Remove Form -->
+                                <form action="/donation/remove_accepted_donation_item/{{_id}}" method="post" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/acceptedDonations}}
+                        {{^acceptedDonations}}
+                            <tr>
+                                <td colspan="4">No donation items to display</td>
+                            </tr>
+                        {{/acceptedDonations}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
+
+{{>footer}}
 
 </body>
 </html>

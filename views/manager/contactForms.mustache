@@ -5,27 +5,41 @@
 </head>
 <body>
     {{>bodyHeading}}
+    <div class="container">
 
-    <h1>{{ title }}</h1>
+        <h1 class="text-center" style="color: white;">Customer Contact Requests</h1>
 
-    {{#contactForms}}
-    <div class="card">
-        <h2>{{ name }}</h2>
-        <p>Email: {{ email }}</p>
-        <p>Phone: {{ phone }}</p>
-        <p>Contact Request: {{ question }}</p>
-        <p>Contacted?: {{ contacted }}</p>
+        <div class="card mb-4" style="border: 7px solid #66AFB6;">
+            <div class="card-body">
+                <p class="card-text">This page displays all the contact requests submitted by customers. Each request will remain displayed here until its been manually removed. Once a form has been actioned, click 'Mark as Contacted' to signify that the customer has been contacted. </p>
+            </div>
+        </div>
+    
+        {{#contactForms}}
+        <div class="card mb-3" style="border: 7px solid #66AFB6;">
+            <div class="card-body">
+                <h2>{{ name }}</h2>
+                <p>Email: {{ email }}</p>
+                <p>Phone: {{ phone }}</p>
+                <p>Contact Request: {{ question }}</p>
+                <p>Contacted: {{ contacted }}</p>
+                <form action="/contact/update_contact_form" method="POST">
+                    <!-- Hidden input field to hold the ID -->
+                    <input type="hidden" name="_id" value="{{ _id }}">
+                    <button type="submit" class="btn btn-primary">Mark as Contacted</button>
+                </form>
+            </div>
+        </div>
+        {{/contactForms}}
+        {{^contactForms}}
+        <div class="card mb-3" style="border: 7px solid #66AFB6;">
+            <div class="card-body">
+                <p>No contact Forms have been submitted</p>
+            </div>
+        </div>
+        {{/contactForms}}
     </div>
-     
-        <form action="/contact/update_contact_form" method="POST">
-            <!-- Hidden input field to hold the ID -->
-            <input type="hidden" name="_id" value="{{ _id }}">
-            <button type="submit">Update Status</button>
-        </form>
 
-    {{/contactForms}}
-    {{^contactForms}}
-        No contact Forms have been submitted
-    {{/contactForms}}
+    {{>footer}}
 </body>
 </html>

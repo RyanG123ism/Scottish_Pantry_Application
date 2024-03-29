@@ -81,16 +81,25 @@ seedDonationData() {
         const newDate = new Date();
         newDate.setDate(newDate.getDate() + 5);
 
+        //create a new date 10 days ago - testing expiry date functions work 
+        const tenDaysAgo = new Date();
+        tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);
+
+        //create a new date 6 days ago - testing expiry date functions work 
+        const sixDaysAgo = new Date();
+        sixDaysAgo.setDate(sixDaysAgo.getDate() - 6);
+
         const donations = [
-            { _id: 'donationId1', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit',  weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId1', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit',  weightKg: 1.2, qty: 1, donatedOn: tenDaysAgo.toISOString().split('T')[0], useByDate: sixDaysAgo.toISOString().split('T')[0]},
             { _id: 'donationId2', userId: 'userId1', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg',  weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
             { _id: 'donationId3', userId: 'userId2', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods',  weightKg: "N/A", qty: 5, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
             { _id: 'donationId4', userId: 'userId4', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg',  weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
             { _id: 'donationId5', userId: 'userId5', warehouseId: 'warehouseId1', foodItem: 'apples', category: 'fruit',  weightKg: 1.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
             { _id: 'donationId6', userId: 'userId6', warehouseId: 'warehouseId1', foodItem: 'carrots', category: 'veg',  weightKg: 0.8, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
             { _id: 'donationId7', userId: 'userId7', warehouseId: 'warehouseId2', foodItem: 'beans', category: 'tinned goods',  weightKg: "N/A", qty: 6, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
-            { _id: 'donationId8', userId: 'userId8', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg', weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]},
+            { _id: 'donationId8', userId: 'userId8', warehouseId: 'warehouseId2', foodItem: 'potatoes', category: 'veg', weightKg: 2.2, qty: 1, donatedOn: new Date().toISOString().split('T')[0], useByDate: newDate.toISOString().split('T')[0]}
         ];
+        
 
         // Array to store promises for each seeding operation
         const promises = [];

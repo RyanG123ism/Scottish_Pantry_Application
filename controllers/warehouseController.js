@@ -2,8 +2,23 @@ const Warehouse = require('../models/warehouseModel');
 const Donation = require('../models/donationModel');
 
 //function to generate stocklist for ANY or ALL warehouses in the system
-const generateWarehouseStockList = async (donations) => {   
-    const groupedStock = donations.reduce((acc, donation) => {
+const generateWarehouseStockList = async (donations) => {
+    
+    // Get today's date
+    const today = new Date();
+
+    //filter out all donations with a useBy date that is greater than today
+    //donations will only be displayed if the useBy date is today or in the future
+    const inDateDonations = donations.filter(donation => {
+        //convert the useByDate string to a Date object to compare
+        const useByDate = new Date(donation.useByDate);
+        //check if the useByDate is greater than or equal to today
+        return useByDate >= today;
+    });
+
+    console.log(inDateDonations);
+    
+    const groupedStock = inDateDonations.reduce((acc, donation) => {
         //groups by food item using accumulator - this is to group all donations into one stock list - ie: 2 donations of 6 cans of beans will be grouped as one Item with 12 qty
         if (!acc[donation.foodItem]) {
             acc[donation.foodItem] = {

@@ -8,16 +8,26 @@
 {{>bodyHeading}}
 
 <div class="container">
-    <div class="card mb-3" style="border: 7px solid #66AFB6;>
+    <h1 class="text-center mb-4" style="color: white;">Manager Dashboard</h1>
+
+    <!-- User Management Card -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
         <div class="card-body text-center">
-            <h2 class="card-title">Manager Dashboard</h2>
+            <h2 class="card-title">User Management</h2>
+            <div class="card-text">
+                <a id="users" href="/admin/user_dashboard" class="btn btn-primary">User Dashboard - IMPLEMENT</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Management Card -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
+        <div class="card-body text-center">
+            <h2 class="card-title">Inventory Management</h2>
             <div class="card-text">
                 {{#warehouseId}}
-                    <a id="users" href="/admin/user_dashboard" class="btn btn-primary">User Dashboard - IMPLEMENT</a>
-                    <a id="stock" href="/warehouse/view_stock/{{warehouseId}}" class="btn btn-primary"> View Warehouse Stock</a>
-                    <a id="donations" href="/warehouse/view_donations/{{warehouseId}}" class="btn btn-primary"> View Warehouse Donations</a>
-                    <a id="stockRequest" href="/warehouse/create_stock_request/{{warehouseId}}" class="btn btn-primary"> Request Stock</a>
-                    <a id="contact" href="/contact/view_all_contact_forms" class="btn btn-primary"> Manage Contact Forms</a>
+                    <a id="stock" href="/warehouse/view_stock/{{warehouseId}}" class="btn btn-primary">View Warehouse Stock</a>
+                    <a id="stockRequest" href="/warehouse/create_stock_request/{{warehouseId}}" class="btn btn-primary">Request Stock</a>
                 {{/warehouseId}}
                 {{^warehouseId}}
                     <p>Your account is not linked to any warehouses - contact an admin </p>
@@ -25,7 +35,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Donation Management Card -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
+        <div class="card-body text-center">
+            <h2 class="card-title">Donation Management</h2>
+            <div class="card-text">
+                {{#warehouseId}}
+                    <a id="donations" href="/warehouse/view_donations/{{warehouseId}}" class="btn btn-primary">View Warehouse Donations</a>
+                {{/warehouseId}}
+                {{^warehouseId}}
+                    <p>Your account is not linked to any warehouses - contact an admin </p>
+                {{/warehouseId}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Management Card -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
+        <div class="card-body text-center">
+            <h2 class="card-title">Contact Management</h2>
+            <div class="card-text">
+                <a id="contact" href="/contact/view_all_contact_forms" class="btn btn-primary">Manage Contact Forms</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{>footer}}
 
 </body>
 </html>

@@ -8,24 +8,36 @@
 {{>bodyHeading}}
 
 <div class="container">
-    <div class="card mb-3" style="border: 7px solid #66AFB6>
+    <!-- Card for Stock Management -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
         <div class="card-body text-center">
-            <h2 class="card-title">Choose which warehouse to view stock from</h2>
+            <h2 class="card-title">Stock Management</h2>
+            <p class="card-text">View the individual stock from each running pantry or view a complete stock list for the whole company. All Stock Request Forms made by pantry managers will be submitted to you and can be found under 'View Stock Request'</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Card for Viewing Pantry Stock -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
+        <div class="card-body text-center">
+            <h2 class="card-title">View Pantry Stock</h2>
             <div class="card-text">
                 {{#warehouses}}
-                    <a href="/warehouse/view_stock/{{_id}}" class="btn btn-primary">{{address}}</a>
+                    <a href="/warehouse/view_stock/{{_id}}" class="btn btn-primary mb-2">{{address}}</a>
                 {{/warehouses}}
                 {{^warehouses}}
                     <p>No warehouse to display </p>
                 {{/warehouses}}
-                <a href="/warehouse/view_all_stock" class="btn btn-primary">View All Stock</a>
+                <a href="/warehouse/view_all_stock" class="btn btn-primary mb-2">View All Stock</a>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="card mb-3" style="border: 7px solid #66AFB6>
+    <!-- Card for Stock Requests -->
+    <div class="card mb-3" style="border: 7px solid #66AFB6;">
         <div class="card-body text-center">
             <h2 class="card-title">Stock Requests</h2>
             <div class="card-text">
@@ -34,6 +46,17 @@
         </div>
     </div>
 </div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{{>footer}}
 
 </body>
 </html>
