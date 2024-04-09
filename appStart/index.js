@@ -4,7 +4,7 @@ const mustache = require('mustache-express');
 const session = require('express-session');
 const path = require('path');
 var cors = require('cors');
-const dbManager = require('../data/databaseManager.js');
+const dbManager = require('../data/databaseManager.js');//not using at the moment
 
 //creating the application
 const app = express();
