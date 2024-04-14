@@ -1,14 +1,17 @@
-{"_id":"userId1","email":"ryang123@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"grant","donations":[],"role":"admin","status":"active"}
-{"_id":"userId2","email":"johndoe456@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"john","lastName":"doe","donations":[],"role":"manager","status":"active"}
-{"_id":"userId3","email":"susan92@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"susan","lastName":"smith","donations":[],"role":"manager","status":"active"}
-{"_id":"userId4","email":"mike34@hotmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"mike","lastName":"johnson","donations":[],"role":"member","status":"active"}
-{"_id":"userId5","email":"amy.white@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"amy","lastName":"white","donations":[],"role":"member","status":"active"}
-{"_id":"userId6","email":"david.miller@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"david","lastName":"miller","donations":[],"role":"member","status":"active"}
-{"_id":"userId7","email":"emily.roberts@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"emily","lastName":"roberts","donations":[],"role":"member","status":"active"}
-{"_id":"userId8","email":"alex.parker@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"alex","lastName":"parker","donations":[],"role":"member","status":"active"}
-{"_id":"userId9","email":"lisa.king@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"lisa","lastName":"king","donations":[],"role":"member","status":"active"}
-{"_id":"userId10","email":"ryan.jones@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
-{"_id":"userId11","email":"carol.martin@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"carol","lastName":"martin","donations":[],"role":"member","status":"active"}
+{"acceptedItem":"rice","acceptedItemCategory":"pantry items","_id":"7gShbAhEwpwFaHYH"}
+{"acceptedItem":"bananas","acceptedItemCategory":"fruit","_id":"CN4hYuMirFg2HLg3"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question","contacted":true,"_id":"FwEAQ3mIxmCUKAZF"}
+{"acceptedItem":"oranges","acceptedItemCategory":"fruit","_id":"LjYizQoagkOgJvI5"}
+{"warehouseId":"warehouseId1","foodItem":"apples","notes":"I need 3kg of apples for the weekend","requestedOn":"2024-04-14","status":"pending","_id":"OW2EViUuk9BxS9Ga"}
+{"acceptedItem":"tomatoes","acceptedItemCategory":"tinned goods","_id":"R90010M0YU8ix71w"}
+{"acceptedItem":"onions","acceptedItemCategory":"veg","_id":"RylnERTnFIVMaS4b"}
+{"warehouseId":"warehouseId1","foodItem":"carrots","notes":"I need 2kg's of carrots for tomorrow","requestedOn":"2024-04-14","status":"approved","_id":"Sa5367RBOn6flkOb"}
+{"acceptedItem":"beans","acceptedItemCategory":"tinned goods","_id":"W4sgQkOuzHg4H72I"}
+{"name":"grand hall","contactEmail":"manager123@manager.com","phone":"07398722440","question":"please help me!","contacted":false,"_id":"WAylHW43dEmkR8hh"}
+{"name":"venue1","contactEmail":"admin123@admin.com","phone":"07398722440","question":"hey i need help to make a donation???","contacted":false,"_id":"WnfudEDdQH16tbis"}
+{"acceptedItem":"pasta","acceptedItemCategory":"pantry items","_id":"WzKMwYH6EXaxSmVU"}
+{"acceptedItem":"potatoes","acceptedItemCategory":"veg","_id":"XfbCFd0L2Tunjjvl"}
+{"acceptedItem":"apples","acceptedItemCategory":"fruit","_id":"Z6gQZ6VQnKSrOnEv"}
 {"_id":"donationId1","userId":"userId1","warehouseId":"warehouseId1","foodItem":"apples","category":"fruit","weightKg":1.2,"qty":1,"donatedOn":"2024-04-04","useByDate":"2024-04-08"}
 {"_id":"donationId2","userId":"userId1","warehouseId":"warehouseId1","foodItem":"carrots","category":"veg","weightKg":0.8,"qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-19"}
 {"_id":"donationId3","userId":"userId2","warehouseId":"warehouseId2","foodItem":"beans","category":"tinned goods","weightKg":"N/A","qty":5,"donatedOn":"2024-04-14","useByDate":"2024-04-19"}
@@ -17,33 +20,92 @@
 {"_id":"donationId6","userId":"userId6","warehouseId":"warehouseId1","foodItem":"carrots","category":"veg","weightKg":0.8,"qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-19"}
 {"_id":"donationId7","userId":"userId7","warehouseId":"warehouseId2","foodItem":"beans","category":"tinned goods","weightKg":"N/A","qty":6,"donatedOn":"2024-04-14","useByDate":"2024-04-19"}
 {"_id":"donationId8","userId":"userId8","warehouseId":"warehouseId2","foodItem":"potatoes","category":"veg","weightKg":2.2,"qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-19"}
-{"acceptedItem":"apples","acceptedItemCategory":"fruit","_id":"Z6gQZ6VQnKSrOnEv"}
-{"acceptedItem":"bananas","acceptedItemCategory":"fruit","_id":"CN4hYuMirFg2HLg3"}
-{"acceptedItem":"oranges","acceptedItemCategory":"fruit","_id":"LjYizQoagkOgJvI5"}
-{"acceptedItem":"pears","acceptedItemCategory":"fruit","_id":"pJCc5fbWrdr6UpKf"}
-{"acceptedItem":"beans","acceptedItemCategory":"tinned goods","_id":"W4sgQkOuzHg4H72I"}
 {"acceptedItem":"carrots","acceptedItemCategory":"veg","_id":"gPMzaU6owNjXdDwu"}
-{"acceptedItem":"potatoes","acceptedItemCategory":"veg","_id":"XfbCFd0L2Tunjjvl"}
-{"acceptedItem":"onions","acceptedItemCategory":"veg","_id":"RylnERTnFIVMaS4b"}
+{"warehouseId":"warehouseId1","foodItem":"apples","notes":"wqdwqdq","requestedOn":"2024-04-14","status":"pending","_id":"hRNcYjOiauWFk4S6"}
 {"acceptedItem":"garlic","acceptedItemCategory":"veg","_id":"kO7ACydG9FgzOLB5"}
-{"acceptedItem":"rice","acceptedItemCategory":"pantry items","_id":"7gShbAhEwpwFaHYH"}
-{"acceptedItem":"pasta","acceptedItemCategory":"pantry items","_id":"WzKMwYH6EXaxSmVU"}
-{"acceptedItem":"tomatoes","acceptedItemCategory":"tinned goods","_id":"R90010M0YU8ix71w"}
+{"acceptedItem":"pears","acceptedItemCategory":"fruit","_id":"pJCc5fbWrdr6UpKf"}
+{"warehouseId":"warehouseId1","foodItem":"beans","notes":"I need 3kg of beans for the weekend","requestedOn":"2024-04-14","status":"pending","_id":"qgGUp1UPr4EB1hcE"}
+{"warehouseId":"warehouseId1","foodItem":"apples","notes":"can i get 3kg of apples for the weekend?","requestedOn":"2024-04-14","status":"declined","_id":"tnQFToAcLUPK3bYj"}
+{"_id":"userId1","email":"ryang123@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"grant","donations":[],"role":"admin","status":"active"}
+{"_id":"userId10","email":"ryan.jones@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
+{"_id":"userId11","email":"carol.martin@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"carol","lastName":"martin","donations":[],"role":"member","status":"active"}
+{"_id":"userId2","email":"johndoe456@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"john","lastName":"doe","donations":[],"role":"manager","status":"active"}
+{"_id":"userId3","email":"susan92@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"susan","lastName":"smith","donations":[],"role":"manager","status":"active"}
+{"_id":"userId4","email":"mike34@hotmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"mike","lastName":"johnson","donations":[],"role":"member","status":"active"}
+{"_id":"userId5","email":"amy.white@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"amy","lastName":"white","donations":[],"role":"member","status":"active"}
+{"_id":"userId6","email":"david.miller@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"david","lastName":"miller","donations":[],"role":"member","status":"active"}
+{"_id":"userId7","email":"emily.roberts@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"emily","lastName":"roberts","donations":[],"role":"member","status":"active"}
+{"_id":"userId8","email":"alex.parker@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"alex","lastName":"parker","donations":[],"role":"member","status":"active"}
+{"_id":"userId9","email":"lisa.king@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"lisa","lastName":"king","donations":[],"role":"member","status":"active"}
+{"warehouseId":"warehouseId1","foodItem":"potatoes","notes":"Im running low on potatoes, any help?","requestedOn":"2024-04-14","status":"pending","_id":"vi00sDspMHbZGbBK"}
 {"_id":"warehouseId1","managerId":"userId2","location":"Glasgow","address":"69-71 Aberdalgie Rd, Easterhouse","postcode":"G34 9HJ","staffMembers":["userId2"],"donations":["donationId1","donationId2"]}
 {"_id":"warehouseId2","managerId":"userId3","location":"Edinburgh","address":"42 John St, Penicuik","postcode":"EH26 8AB","staffMembers":["userId3"],"donations":["donationId3","donationId4"]}
-{"warehouseId":"warehouseId1","foodItem":"carrots","notes":"I need 2kg's of carrots for tomorrow","requestedOn":"2024-04-14","status":"pending","_id":"Sa5367RBOn6flkOb"}
-{"warehouseId":"warehouseId1","foodItem":"apples","notes":"can i get 3kg of apples for the weekend?","requestedOn":"2024-04-14","status":"pending","_id":"tnQFToAcLUPK3bYj"}
-{"warehouseId":"warehouseId1","foodItem":"potatoes","notes":"Im running low on potatoes, any help?","requestedOn":"2024-04-14","status":"pending","_id":"vi00sDspMHbZGbBK"}
-{"warehouseId":"warehouseId1","foodItem":"carrots","notes":"I need 2kg's of carrots for tomorrow","requestedOn":"2024-04-14","status":"approved","_id":"Sa5367RBOn6flkOb"}
-{"warehouseId":"warehouseId1","foodItem":"apples","notes":"can i get 3kg of apples for the weekend?","requestedOn":"2024-04-14","status":"declined","_id":"tnQFToAcLUPK3bYj"}
-{"acceptedItem":"pineapple","acceptedItemCategory":"fruit","_id":"OgQVtn5DWy6z3VcS"}
-{"$$deleted":true,"_id":"OgQVtn5DWy6z3VcS"}
-{"acceptedItem":"TEST ITEM","acceptedItemCategory":"fruit","_id":"iupyaBAkbQy9N72Z"}
-{"$$deleted":true,"_id":"iupyaBAkbQy9N72Z"}
-{"warehouseId":"warehouseId1","foodItem":"apples","notes":"wqdwqdq","requestedOn":"2024-04-14","status":"pending","_id":"hRNcYjOiauWFk4S6"}
-{"warehouseId":"warehouseId1","foodItem":"beans","notes":"I need 3kg of beans for the weekend","requestedOn":"2024-04-14","status":"pending","_id":"qgGUp1UPr4EB1hcE"}
-{"warehouseId":"warehouseId1","foodItem":"apples","notes":"I need 3kg of apples for the weekend","requestedOn":"2024-04-14","status":"pending","_id":"OW2EViUuk9BxS9Ga"}
-{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question","contacted":false,"_id":"FwEAQ3mIxmCUKAZF"}
-{"name":"grand hall","contactEmail":"manager123@manager.com","phone":"07398722440","question":"please help me!","contacted":false,"_id":"WAylHW43dEmkR8hh"}
-{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question","contacted":true,"_id":"FwEAQ3mIxmCUKAZF"}
-{"name":"venue1","contactEmail":"admin123@admin.com","phone":"07398722440","question":"hey i need help to make a donation???","contacted":false,"_id":"WnfudEDdQH16tbis"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this a test ","contacted":false,"_id":"8b5lEyQoGmYTzaDy"}
+{"userId":"userId4","warehouseId":"warehouseId1","foodItem":"bananas","category":"fruit","weightKg":"1","qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-17","_id":"uoB3lPePVfXKC4FD"}
+{"_id":"userId10","email":"ryan.jonesTest@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"member"}
+{"_id":"userId10","email":"ryan.jonesTest@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
+{"_id":"userId10","email":"ryan.jonesTest@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"deactivated"}
+{"_id":"userId4","email":"mike34@hotmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"mike","lastName":"johnson","donations":[],"role":"member","status":"deactivated"}
+{"email":"test@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$u/wD/wtXA5jz6BGbp1EOeuI4h7JW1X8DWM.4xTmt.Dj8bLEVo8G8u","donations":[],"role":"member","status":"active","_id":"G2dhcNMmCbyTEZ9C"}
+{"acceptedItem":"pineapple","acceptedItemCategory":"fruit","_id":"TLgTHWTzK6OIRvlx"}
+{"$$deleted":true,"_id":"Z6gQZ6VQnKSrOnEv"}
+{"_id":"userId10","email":"ryan.jonesTest@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
+{"_id":"userId10","email":"ryan.jones@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"member"}
+{"_id":"userId10","email":"ryan.jones@gmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"ryan","lastName":"jones","donations":[],"role":"member","status":"active"}
+{"_id":"userId4","email":"mike34@hotmail.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"mike","lastName":"johnson","donations":[],"role":"member","status":"active"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this is a test ","contacted":false,"_id":"fbbmD4s0UpXi5mIb"}
+{"userId":"userId4","warehouseId":"warehouseId1","foodItem":"pineapple","category":"fruit","weightKg":"1","qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-17","_id":"ESR2apX0RaTucGvv"}
+{"email":"test123@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$lX1xNF2V771JuoeTlnYH.O7.LJx6saTdk3TYOtr1tKKYKOEP.ig/K","donations":[],"role":"member","status":"active","_id":"1tVPzIGeigFOtO8z"}
+{"email":"test123@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$lX1xNF2V771JuoeTlnYH.O7.LJx6saTdk3TYOtr1tKKYKOEP.ig/K","donations":[],"role":"member","status":"deactivated","_id":"1tVPzIGeigFOtO8z"}
+{"email":"test123@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$lX1xNF2V771JuoeTlnYH.O7.LJx6saTdk3TYOtr1tKKYKOEP.ig/K","donations":[],"role":"member","status":"active","_id":"1tVPzIGeigFOtO8z"}
+{"_id":"userId9","email":"lisa.kingTest@yahoo.com","password":"password","passwordHash":"$2b$10$AT8oh2C2JW6.B9qmi7UrEuQQwegVB91M2xszlQtO9kh.lZAt0wxse","firstName":"lisa","lastName":"king","donations":[],"role":"member","status":"member"}
+{"warehouseId":"warehouseId1","foodItem":"apples","notes":"I need 3kg of apples for the weekend","requestedOn":"2024-04-14","status":"approved","_id":"OW2EViUuk9BxS9Ga"}
+{"warehouseId":"warehouseId1","foodItem":"apples","notes":"wqdwqdq","requestedOn":"2024-04-14","status":"declined","_id":"hRNcYjOiauWFk4S6"}
+{"acceptedItem":"avocados","acceptedItemCategory":"fruit","_id":"T6weiVepaVBqlEvW"}
+{"$$deleted":true,"_id":"RylnERTnFIVMaS4b"}
+{"warehouseId":"warehouseId1","foodItem":"potatoes","notes":"i need potatoes","requestedOn":"2024-04-14","status":"pending","_id":"9wPIYq2ObHDrZXub"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this a test ","contacted":true,"_id":"8b5lEyQoGmYTzaDy"}
+{"name":"grand hall","contactEmail":"manager123@manager.com","phone":"07398722440","question":"please help me!","contacted":true,"_id":"WAylHW43dEmkR8hh"}
+{"name":"venue1","contactEmail":"admin123@admin.com","phone":"07398722440","question":"hey i need help to make a donation???","contacted":true,"_id":"WnfudEDdQH16tbis"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this is a test ","contacted":true,"_id":"fbbmD4s0UpXi5mIb"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello!","contacted":false,"_id":"8l3kMRUeLGrNQ316"}
+{"email":"testUser1@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$oZ7yVDc0VXHJ2qWhRmDSS.w/.zkkcne3LmwydLp6fsd929yHwLk/C","donations":[],"role":"member","status":"active","_id":"85qKz4eTHNrNCO7Y"}
+{"userId":"userId4","warehouseId":"warehouseId1","foodItem":"bananas","category":"fruit","weightKg":"1","qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-17","_id":"Ac4XIjQYYF8A9WZR"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this is a test ","contacted":false,"_id":"Ec7LoKn47sXVi6Xy"}
+{"email":"test@test1234.com","firstName":"ryan ","lastName":"grant","password":"","passwordHash":"$2b$10$g1pb7sXaababKdsmv6MYC.Iur/AS1molAWWhS1aN4Hm5kOWRNTiuO","donations":[],"role":"member","status":"active","_id":"CQ98KyvYHE9W70Wn"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question","contacted":false,"_id":"BZ1UvP7JLKMVHoIq"}
+{"email":"test123@test123.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$OUAqSfGWl8dvl8RPxdg8PuavnDsbsL5p4PVXHqdGsKq2cjXIP3JYa","donations":[],"role":"member","status":"active","_id":"ub9uxFusSkmnjOQp"}
+{"userId":"ub9uxFusSkmnjOQp","warehouseId":"warehouseId1","foodItem":"oranges","category":"fruit","weightKg":"1","qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-17","_id":"7SlFK4HjoYZpjZmD"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"active","_id":"ecpFyTcZWTUn9smw"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"deactivated","_id":"ecpFyTcZWTUn9smw"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"active","_id":"ecpFyTcZWTUn9smw"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"deactivated","_id":"ecpFyTcZWTUn9smw"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"active","_id":"ecpFyTcZWTUn9smw"}
+{"email":"testtest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$.tNuHpH90MY8uaiYJc25ausaJNxZSVZLlbzSIcrSDLZuy8xFnQXHq","donations":[],"role":"member","status":"deactivated","_id":"ecpFyTcZWTUn9smw"}
+{"email":"test123TEST@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$lX1xNF2V771JuoeTlnYH.O7.LJx6saTdk3TYOtr1tKKYKOEP.ig/K","donations":[],"role":"member","status":"member","_id":"1tVPzIGeigFOtO8z"}
+{"warehouseId":"warehouseId1","foodItem":"potatoes","notes":"i need potatoes","requestedOn":"2024-04-14","status":"approved","_id":"9wPIYq2ObHDrZXub"}
+{"warehouseId":"warehouseId1","foodItem":"beans","notes":"I need 3kg of beans for the weekend","requestedOn":"2024-04-14","status":"declined","_id":"qgGUp1UPr4EB1hcE"}
+{"acceptedItem":"KIWIS","acceptedItemCategory":"fruit","_id":"rrDJganug5hB9jIz"}
+{"$$deleted":true,"_id":"rrDJganug5hB9jIz"}
+{"warehouseId":"warehouseId1","foodItem":"oranges","notes":"i need these by the weekend","requestedOn":"2024-04-14","status":"pending","_id":"RGz0apGq2WHANJ9f"}
+{"warehouseId":"warehouseId1","foodItem":"oranges","notes":"i need these by the weekend","requestedOn":"2024-04-14","status":"approved","_id":"RGz0apGq2WHANJ9f"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello!","contacted":true,"_id":"8l3kMRUeLGrNQ316"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question","contacted":true,"_id":"BZ1UvP7JLKMVHoIq"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello this is a test ","contacted":true,"_id":"Ec7LoKn47sXVi6Xy"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question!","contacted":false,"_id":"aorPEMPC1UKJ8mm7"}
+{"email":"testtesttest@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$hbVd.HqreCOb3XWQGhL0PeKbyZLKZ2kkYTNvr2Y5cusVJzaLUaZdm","donations":[],"role":"member","status":"active","_id":"uRtuwdTcDftCtrdE"}
+{"userId":"uRtuwdTcDftCtrdE","warehouseId":"warehouseId1","foodItem":"oranges","category":"fruit","weightKg":"1","qty":1,"donatedOn":"2024-04-14","useByDate":"2024-04-16","_id":"0T0OMFHSoQJ5ItTY"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"active","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"deactivated","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"active","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"deactivated","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"active","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"deactivated","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"active","_id":"7bGR0Gf61qEaY51h"}
+{"email":"hello@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"deactivated","_id":"7bGR0Gf61qEaY51h"}
+{"email":"helloTEST@test.com","firstName":"ryan","lastName":"grant","password":"","passwordHash":"$2b$10$q6NKlxRSo00eLOAUxgkR0e2LgVrH70HDVM7bEsOsgIv7qq9mY83LG","donations":[],"role":"member","status":"member","_id":"7bGR0Gf61qEaY51h"}
+{"$$deleted":true,"_id":"CN4hYuMirFg2HLg3"}
+{"acceptedItem":"bananas","acceptedItemCategory":"fruit","_id":"QKGoPBiZzukw3fTi"}
+{"warehouseId":"warehouseId1","foodItem":"oranges","notes":"hello i need oranges for the weekend","requestedOn":"2024-04-14","status":"pending","_id":"ShOs0hVrwC7Cf59L"}
+{"warehouseId":"warehouseId1","foodItem":"oranges","notes":"hello i need oranges for the weekend","requestedOn":"2024-04-14","status":"approved","_id":"ShOs0hVrwC7Cf59L"}
+{"name":"ryan grant","contactEmail":"grantryan182@gmail.com","phone":"07398722440","question":"hello i have a question!","contacted":true,"_id":"aorPEMPC1UKJ8mm7"}
