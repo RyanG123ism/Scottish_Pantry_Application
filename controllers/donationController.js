@@ -121,7 +121,7 @@ exports.post_make_donation = async(req, res) => {
         fiveDaysFromNow.setDate(fiveDaysFromNow.getDate() + 5);
 
         const twoYearsFromNow = new Date(currentDate);
-        fiveDaysFromNow.setDate(fiveDaysFromNow.getDate() + 730);
+        twoYearsFromNow.setDate(fiveDaysFromNow.getDate() + 730);
 
         //gets the data from the req.body
         const warehouseId = req.body.address;

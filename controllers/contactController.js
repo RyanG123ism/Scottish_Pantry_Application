@@ -20,8 +20,8 @@ exports.view_all_contact_forms = async(req, res) => {
 //post method - submits contact form 
 exports.submit_contact_form = async (req, res) => {
 
-    const { name, contactEmail, phone, question } = req.body;//getting data from request 
-    const contact = {name,contactEmail,phone, question, contacted: false};
+    const { name, email, phone, question } = req.body;//getting data from request 
+    const contact = {name, contactEmail: email, phone, question, contacted: false};
     const newContact = await Contact.addContactForm(contact);
 
     console.log("newContact", newContact);

@@ -78,7 +78,7 @@ async createUser(email, firstName, lastName, password = []) {
         email,
         firstName,
         lastName,
-        password,//need to take this out eventually - in future this property will only be used to store password data during runtime but never saved to DB 
+        password: "",//need to take this out eventually - in future this property will only be used to store password data during runtime but never saved to DB 
         passwordHash : await this.hashPassword(password), //using the password to store a hashed version
         donations : [], //creating an empty array of donations for a user
         role : "member", // assigning member role to user
