@@ -1,1 +1,1 @@
-web: node appStart/index.js
+web: node index.js
